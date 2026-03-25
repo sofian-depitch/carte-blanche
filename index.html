@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Blanche | Executive Speech Preparation</title>
+    <meta name="description" content="Private preparation for C-suite executives facing moments that matter.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0c0c0c;
+            --card: #f5f2ed;
+            --card-dark: #1a1a1a;
+            --text-dark: #0c0c0c;
+            --text-light: #f5f2ed;
+            --text-muted-dark: #6b6560;
+            --text-muted-light: #a8a29e;
+            --border-dark: rgba(12,12,12,0.12);
+            --border-light: rgba(245,242,237,0.1);
+            --sans: 'Inter', -apple-system, sans-serif;
+            --serif: 'DM Serif Display', Georgia, serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-light);
+            font-family: var(--sans);
+            font-weight: 400;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--card);
+            color: var(--bg);
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 3rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 44px;
+            filter: invert(1);
+        }
+
+        .nav-contact {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border: 1px solid rgba(245,242,237,0.25);
+            border-radius: 4px;
+            transition: all 0.25s;
+        }
+
+        .nav-contact:hover {
+            background: var(--card);
+            color: var(--bg);
+        }
+
+        /* ── LAYOUT ── */
+        .wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .spacer { height: 10rem; }
+        .spacer-sm { height: 6rem; }
+
+        /* ── HERO ── */
+        .hero {
+            padding-top: calc(52px + 6rem);
+            padding-bottom: 4rem;
+        }
+
+        .hero-card {
+            background: var(--card);
+            color: var(--text-dark);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 520px;
+        }
+
+        .hero-left {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted-dark);
+        }
+
+        .hero-title {
+            font-weight: 900;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            line-height: 0.92;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin: 1.5rem 0;
+        }
+
+        .hero-right {
+            background: var(--card-dark);
+            color: var(--text-light);
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(245,242,237,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-sub {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: #c8c3bc;
+            max-width: 380px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .hero-meta-item {
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted-light);
+        }
+
+        /* ── SECTION HEADER ── */
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-weight: 900;
+            font-size: clamp(2.2rem, 4.5vw, 4rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        .section-title-sm {
+            font-weight: 800;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        /* ── CARD SYSTEM ── */
+        .card {
+            background: var(--card);
+            color: var(--text-dark);
+            border-radius: 12px;
+            padding: 3rem;
+        }
+
+        .card-dark {
+            background: var(--card-dark);
+            color: var(--text-light);
+            border-radius: 12px;
+            padding: 3rem;
+        }
+
+        .card-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted-dark);
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-dark);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-dark .card-label {
+            color: var(--text-muted-light);
+            border-bottom-color: var(--border-light);
+        }
+
+        .card-title {
+            font-weight: 900;
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-text {
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: var(--text-muted-dark);
+        }
+
+        .card-dark .card-text {
+            color: var(--text-muted-light);
+        }
+
+        .card-text + .card-text {
+            margin-top: 1rem;
+        }
+
+        /* ── GRID LAYOUTS ── */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .grid-split {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1rem;
+        }
+
+        /* ── SERVICE LIST ── */
+        .service-list {
+            list-style: none;
+        }
+
+        .service-item {
+            display: grid;
+            grid-template-columns: 60px 1fr 40px;
+            align-items: center;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid var(--border-dark);
+            font-size: 0.9rem;
+            transition: padding-left 0.2s;
+        }
+
+        .service-item:first-child {
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .service-item:hover {
+            padding-left: 0.5rem;
+        }
+
+        .service-num {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-muted-dark);
+        }
+
+        .service-name {
+            font-weight: 500;
+        }
+
+        .service-icon {
+            text-align: right;
+            font-size: 0.8rem;
+            opacity: 0.3;
+        }
+
+        .card-dark .service-item {
+            border-bottom-color: var(--border-light);
+        }
+
+        .card-dark .service-item:first-child {
+            border-top-color: var(--border-light);
+        }
+
+        .card-dark .service-num {
+            color: var(--text-muted-light);
+        }
+
+        /* ── PROCESS CARDS ── */
+        .process-num {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--text-muted-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .process-name {
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .process-desc {
+            font-size: 0.82rem;
+            line-height: 1.7;
+            color: var(--text-muted-dark);
+        }
+
+        /* ── HOW I WORK ── */
+        .coaching-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .coaching-card {
+            background: var(--card);
+            color: var(--text-dark);
+            border-radius: 12px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+        }
+
+        .coaching-card.dark {
+            background: var(--card-dark);
+            color: var(--text-light);
+        }
+
+        .coaching-num {
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted-dark);
+        }
+
+        .coaching-card.dark .coaching-num {
+            color: var(--text-muted-light);
+        }
+
+        .coaching-title {
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+        }
+
+        .coaching-text {
+            font-size: 0.82rem;
+            line-height: 1.7;
+            color: var(--text-muted-dark);
+        }
+
+        .coaching-card.dark .coaching-text {
+            color: var(--text-muted-light);
+        }
+
+        /* ── ABOUT SECTION ── */
+        .about-card {
+            background: var(--card);
+            color: var(--text-dark);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .about-left {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 1px solid var(--border-dark);
+        }
+
+        .about-name {
+            font-weight: 900;
+            font-size: 2.2rem;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .about-stat {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted-dark);
+        }
+
+        .about-right {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-quote {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-style: italic;
+            line-height: 1.7;
+            color: var(--text-muted-dark);
+            padding: 1.5rem;
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        /* ── CONTACT ── */
+        .contact-card {
+            background: var(--card);
+            color: var(--text-dark);
+            border-radius: 12px;
+            padding: 5rem 3rem;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-text {
+            font-size: 0.88rem;
+            color: var(--text-muted-dark);
+            max-width: 440px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            background: var(--bg);
+            color: var(--text-light);
+            border-radius: 6px;
+            transition: all 0.25s;
+        }
+
+        .contact-email:hover {
+            background: #2a2a2a;
+            transform: translateY(-1px);
+        }
+
+        .contact-note {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted-dark);
+            margin-top: 1.5rem;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-light);
+            margin-top: 1rem;
+        }
+
+        .footer-brand {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--text-muted-light);
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            color: var(--text-muted-light);
+        }
+
+        /* ── DIVIDER TEXT ── */
+        .divider-text {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .divider-text p {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-muted-light);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            nav { padding: 1rem 1.5rem; }
+            .wrapper { padding: 0 1.5rem; }
+            .spacer { height: 6rem; }
+            .spacer-sm { height: 4rem; }
+
+            .hero-card,
+            .grid-2,
+            .grid-split,
+            .coaching-grid,
+            .about-card {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-right {
+                border-radius: 0 0 12px 12px;
+            }
+
+            .about-left {
+                border-right: none;
+                border-bottom: 1px solid var(--border-dark);
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="nav-logo"><img src="CarteBlanche_Logo_BLACK.png" alt="Carte Blanche"></a>
+        <a href="#contact" class="nav-contact">Contact</a>
+    </nav>
+
+    <div class="wrapper">
+
+        <!-- ━━━ HERO ━━━ -->
+        <section class="hero">
+            <div class="hero-card reveal">
+                <div class="hero-left">
+                    <div class="hero-label">Private Practice</div>
+                    <div>
+                        <h1 class="hero-title">Carte<br>Blanche</h1>
+                    </div>
+                    <div class="hero-label">Paris · Tokyo · Seoul · Shanghai · Singapore</div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-label" style="visibility:hidden;">&#8203;</div>
+                    <div>
+                        <p class="hero-sub">The audience in those rooms is impatient, hard to impress, and looking for a reason to say no. One hesitation, one weak transition, one slide that doesn't earn its place, and the attention is gone. Sharpness. Density. Precision. That's where I operate.</p>
+                    </div>
+                    <div class="hero-meta">
+                        <div class="hero-meta-item">Est. 2016</div>
+                        <div class="hero-meta-item">Exchanges held in strict confidence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="reveal" style="text-align:center;padding:1rem 0 3rem;">
+            <p style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted-light);">Trusted by C-suite leaders at CAC 40, Fortune 500, and sovereign organisations</p>
+        </div>
+
+        <!-- ━━━ THE PRACTICE ━━━ -->
+        <section>
+            <div class="section-header reveal">
+                <div class="section-tag">The Practice</div>
+                <h2 class="section-title">You've done this a hundred times.<br>This one needs to be different.</h2>
+            </div>
+            <div class="grid-split reveal">
+                <div class="card">
+                    <div class="card-label"><span>About</span><span>Carte Blanche</span></div>
+                    <p class="card-text">Every executive knows the moments that actually move a career: the budget that gets approved, the mandate that gets extended, the board that decides you're the one to lead the next chapter. Those moments happen in 30 minutes, in front of people who have the power to say yes or no. And you can't rehearse this with anyone inside the organization.</p>
+                    <p class="card-text">The difference between those two outcomes is rarely the quality of the thinking. It's the density and precision of the message: the right idea everyone will remember, every word earning its place, every transition sharpened, every minute working toward the yes.</p>
+                    <p class="card-text">Carte Blanche is a private practice built around that gap. One engagement at a time, fully dedicated to your moment, where every sentence needs to hit.</p>
+                </div>
+                <div class="card-dark">
+                    <div class="card-label"><span>Terms</span></div>
+                    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+                        <p style="font-weight:800;font-size:1.8rem;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.15;margin-bottom:1rem;">Precise.<br>Uncompromising.<br>Direct.</p>
+                        <p class="card-text">We rebuild your presentation until it's bulletproof.</p>
+                        <p class="card-text" style="margin-top:1.5rem;font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;">8 to 10 clients per year.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <!-- ━━━ SITUATIONS ━━━ -->
+        <section>
+            <div class="grid-2 reveal">
+                <div class="card">
+                    <div class="card-label"><span>Service</span><span>Situations</span></div>
+                    <div class="card-title">The<br>Situations</div>
+                    <p class="card-text" style="margin-bottom:2rem;">You don't get a second chance at these.</p>
+                    <ul class="service-list">
+                        <li class="service-item"><span class="service-num">01</span><span class="service-name">First address in a new leadership role</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">02</span><span class="service-name">Pitching a new initiative to Group leadership</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">03</span><span class="service-name">Annual executive review with the Group CEO</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">04</span><span class="service-name">Board presentations & shareholder addresses</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">05</span><span class="service-name">Keynotes & invitation-only industry forums</span><span class="service-icon">+</span></li>
+                    </ul>
+                </div>
+                <div class="card-dark">
+                    <div class="card-label"><span>Engagement</span><span>Format</span></div>
+                    <div class="card-title" style="color:var(--text-light);">How It<br>Works</div>
+                    <p class="card-text">A polished speech for a weak argument is still a weak speech. We start there.</p>
+                    <p class="card-text" style="margin-top:2rem;"><strong style="color:var(--text-light);">3 to 6 sessions typical. Or a single intensive 48 hours before the moment.</strong> For certain clients, an ongoing relationship, a few times a year, when the stakes go up.</p>
+                    <p class="card-text" style="margin-top:2rem;">Sessions are direct. There is no version of this where the feedback is comfortable and the work is incomplete. What gets said stays between us.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <!-- ━━━ PROCESS ━━━ -->
+        <section>
+            <div class="section-header reveal">
+                <div class="section-tag">The Protocol</div>
+                <h2 class="section-title">Five phases.<br>No shortcuts.</h2>
+            </div>
+            <div class="grid-2 reveal" style="margin-bottom:1rem;">
+                <div class="card-dark">
+                    <div class="process-num" style="color:var(--text-muted-light);">Phase 001</div>
+                    <div class="process-name" style="color:var(--text-light);">Pitch Framing</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">Map the room before touching a single slide. Who decides. Who supports. Who's competing for the same budget. What success looks like and what kills it.</p>
+                </div>
+                <div class="card">
+                    <div class="process-num">Phase 002</div>
+                    <div class="process-name">Argument Design</div>
+                    <p class="process-desc">Isolate the single idea the audience must leave with. Strip everything that competes with it. Define the one thread that ties everything together.</p>
+                </div>
+            </div>
+            <div class="grid-2 reveal" style="margin-bottom:1rem;">
+                <div class="card">
+                    <div class="process-num">Phase 003</div>
+                    <div class="process-name">Slide Sequencing</div>
+                    <p class="process-desc">Engineer the argument structure. Control when the audience agrees, when they question, and when they concede. Sequence is leverage.</p>
+                </div>
+                <div class="card-dark">
+                    <div class="process-num" style="color:var(--text-muted-light);">Phase 004</div>
+                    <div class="process-name" style="color:var(--text-light);">Adversarial Pressure</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">Attack the argument before the audience does. Surface every weakness, every ambiguity, every line that invites the wrong question at the wrong moment.</p>
+                </div>
+            </div>
+            <div class="grid-2 reveal">
+                <div class="card-dark">
+                    <div class="process-num" style="color:var(--text-muted-light);">Phase 005</div>
+                    <div class="process-name" style="color:var(--text-light);">Full Simulation</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">Complete rehearsal under real conditions. Pacing, presence, authority. Every pause, every transition, every answer to the question you don't want asked.</p>
+                </div>
+                <div class="card" style="background:transparent;border:1px solid var(--border-light);color:var(--text-light);">
+                    <div class="process-num" style="color:var(--text-muted-light);">The result</div>
+                    <div class="process-name" style="color:var(--text-light);">You walk in sharp.</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">Every word precise. Every minute dense. A message built to hit under any pressure the audience can apply.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <!-- ━━━ HOW I WORK ━━━ -->
+        <section>
+            <div class="section-header reveal">
+                <div class="section-tag">Working Style</div>
+                <h2 class="section-title">How I<br>Work</h2>
+            </div>
+
+            <div class="coaching-grid reveal" style="margin-bottom:1rem;">
+                <div class="coaching-card">
+                    <div class="coaching-num">Principle 01</div>
+                    <div>
+                        <div class="coaching-title">Confrontational by design</div>
+                        <p class="coaching-text">I'll tell you the opening is weak. That the third slide loses the audience. That your delivery undermines your own argument. If the structure collapses under scrutiny, it collapses here, not on the day. Trust is built in the first session.</p>
+                    </div>
+                </div>
+                <div class="coaching-card dark">
+                    <div class="coaching-num">Principle 02</div>
+                    <div>
+                        <div class="coaching-title" style="color:var(--text-light);">Your agenda, not mine</div>
+                        <p class="coaching-text">Your strategy. Your vision. But if the core argument isn't hitting, if the metaphor is wrong, if the key point is buried on slide 12, we fix it. The goal is yours. The way we get you there, leave it to me.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="coaching-grid reveal" style="margin-bottom:1rem;">
+                <div class="coaching-card dark">
+                    <div class="coaching-num">Principle 03</div>
+                    <div>
+                        <div class="coaching-title" style="color:var(--text-light);">Situation-first, not method-first</div>
+                        <p class="coaching-text">What I bring is the pattern recognition from 100+ speeches that delivered the outcome. I know what works, what doesn't, and what loses a room before the speaker realizes it. Every preparation starts from your specific situation. The method follows, never the reverse.</p>
+                    </div>
+                </div>
+                <div class="coaching-card">
+                    <div class="coaching-num">Principle 04</div>
+                    <div>
+                        <div class="coaching-title">Obsession with the first 90 seconds</div>
+                        <p class="coaching-text">The audience makes its decision in the opening. Authority is established or lost before the first argument is even presented. I don't build the presentation. I challenge it. Every assumption, every slide, every opening line. Lose them there, and no argument recovers it.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="coaching-grid reveal">
+                <div class="coaching-card">
+                    <div class="coaching-num">Principle 05</div>
+                    <div>
+                        <div class="coaching-title">Silence as a weapon</div>
+                        <p class="coaching-text">Most executives talk too fast and fill every pause. A well-placed pause does more than three slides of data. I show you where to stop, how long to hold, and why the audience leans in when you do.</p>
+                    </div>
+                </div>
+                <div class="coaching-card dark">
+                    <div class="coaching-num">Principle 06</div>
+                    <div>
+                        <div class="coaching-title" style="color:var(--text-light);">Invisible by intent</div>
+                        <p class="coaching-text">The only people who know I exist are the ones you would refer me to. No methodology to credit, no brand to mention. The work disappears. Only your success stays.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <!-- ━━━ OUTCOMES ━━━ -->
+        <section>
+            <div class="section-header reveal">
+                <div class="section-tag">The Outcomes</div>
+                <h2 class="section-title">What happened<br>after the work.</h2>
+            </div>
+            <div class="grid-3 reveal">
+                <div class="card">
+                    <div class="process-num">Outcome</div>
+                    <div class="process-name">Annual review. Audience held.</div>
+                    <p class="process-desc">A Global Brand General Manager stands in front of Group leadership for the annual strategic review. 30 minutes, no safety net. She got the green light before Q&A. Two years later, she was promoted.</p>
+                </div>
+                <div class="card-dark">
+                    <div class="process-num" style="color:var(--text-muted-light);">Outcome</div>
+                    <div class="process-name" style="color:var(--text-light);">First address. Authority established.</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">A newly appointed executive stands in front of the organization for the first time. One chance to set the frame. He set the tone. No one questioned the direction.</p>
+                </div>
+                <div class="card">
+                    <div class="process-num">Outcome</div>
+                    <div class="process-name">Portfolio pitch. $5B cession. Promoted.</div>
+                    <p class="process-desc">A Business Unit Director at a global tea brand prepares the portfolio strategy pitch during a $5B cession. She was named Marketing Director Europe and Board Member of the new entity.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <!-- ━━━ WHO ━━━ -->
+        <section>
+            <div class="section-header reveal">
+                <div class="section-tag">The Partner</div>
+                <h2 class="section-title">Sofian<br>Meguellati</h2>
+            </div>
+            <div class="about-card reveal">
+                <div class="about-left">
+                    <div>
+                        <div class="about-name">10 Years.<br>100+ Speeches.</div>
+                    </div>
+                    <div>
+                        <div class="about-stat" style="margin-bottom:0.5rem;">Top global cosmetics group</div>
+                        <div class="about-stat" style="margin-bottom:0.5rem;">CAC 40 industrial conglomerate</div>
+                        <div class="about-stat" style="margin-bottom:0.5rem;">Fortune 500 tech company</div>
+                        <div class="about-stat" style="margin-bottom:0.5rem;">Global food & beverage leader</div>
+                        <div class="about-stat" style="margin-bottom:0.5rem;">Sovereign institution</div>
+                        <div class="about-stat" style="margin-bottom:0.5rem;">Top-tier European bank</div>
+                        <div class="about-stat" style="margin-top:1rem;">Paris · Tokyo · Seoul · Shanghai · Singapore</div>                    </div>
+                </div>
+                <div class="about-right">
+                    <p class="card-text">For 10 years, I've worked with senior executives across consumer, banking, industry, tech, and government on the addresses that decide what happens next. Not the quarterly all-hands. The moments where a career, a budget, or an organizational direction turns on 30 minutes in front of the right people.</p>
+                    <p class="card-text">After 100+ speeches at this level, you develop an instinct for what loses an audience in the first two minutes. That's what I bring.</p>
+                    <p class="card-text">The sessions are direct. I will tell you what is not working. We rebuild it until the message holds under any pressure the audience can apply.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <!-- ━━━ CONTACT ━━━ -->
+        <section id="contact">
+            <div class="contact-card reveal">
+                <div class="contact-title">Your moment is coming.<br>Make it count.</div>
+                <p class="contact-text">Board address. Keynote. Presentation to Group leadership. If the preparation isn't where it needs to be, reach out.</p>
+                <a href="https://wa.me/33625320678" class="contact-email" target="_blank" rel="noopener">WhatsApp +33 6 25 32 06 78</a>
+                <p class="contact-note">All exchanges are held in strict confidence</p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-brand">Carte Blanche | Paris · Tokyo · Seoul · Shanghai · Singapore</div>
+            <div class="footer-copy">&copy; 2026</div>
+        </footer>
+    </div>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
