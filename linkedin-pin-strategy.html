@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1200px; height: 1200px; }
+body {
+    background: #0c0c0c;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* TOP — gets cropped on mobile (decorative) */
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 287px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c9a876;
+}
+
+/* CENTER BAND — anchored LEFT 75% to survive LinkedIn mobile left-shift crop */
+.center {
+    position: absolute;
+    top: 287px;
+    left: 80px;
+    width: 820px; /* fits in left 75% of 1200 */
+    height: 626px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.quote {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-style: italic;
+    font-size: 64px;
+    font-weight: 400;
+    color: #f5f2ed;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+.quote .gold { color: #c9a876; }
+
+/* BOTTOM — gets cropped on mobile (decorative) */
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 287px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.divider {
+    width: 48px;
+    height: 2px;
+    background: #c9a876;
+}
+</style>
+</head>
+<body>
+    <div class="top">
+        <div class="brand">Carte Blanche</div>
+    </div>
+    <div class="center">
+        <div class="quote">"The strategy is yours.<br>How it lands, <span class="gold">leave it to me.</span>"</div>
+    </div>
+    <div class="bottom">
+        <div class="divider"></div>
+    </div>
+</body>
+</html>
