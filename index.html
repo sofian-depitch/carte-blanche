@@ -602,8 +602,33 @@
                 grid-template-columns: 1fr;
             }
 
+            .hero-left,
+            .hero-right,
+            .about-left,
+            .about-right {
+                padding: 2.25rem;
+            }
+
             .hero-right {
                 border-radius: 0 0 12px 12px;
+            }
+
+            .hero-right .hero-label[style*="hidden"] {
+                display: none;
+            }
+
+            .hero-left > .hero-label:last-child {
+                margin-top: 1.75rem;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 0.6rem;
+                margin-top: 1.75rem;
+            }
+
+            .hero-meta-item {
+                white-space: nowrap;
             }
 
             .about-left {
