@@ -32,26 +32,25 @@ body {
     color: #c9a876;
 }
 
-/* CENTER BAND — text constrained to inner 800px to survive carousel crop */
+/* CENTER BAND — left-aligned in safe zone (left 75%), survives any right crop */
 .center {
     position: absolute;
     top: 287px;
-    left: 0;
-    right: 0;
+    left: 80px;
+    width: 820px;
     height: 626px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 200px;
+    justify-content: flex-start;
+    text-align: left;
 }
 .quote {
     font-family: 'DM Serif Display', Georgia, serif;
     font-style: italic;
-    font-size: 64px;
+    font-size: 84px;
     font-weight: 400;
     color: #f5f2ed;
-    line-height: 1.15;
+    line-height: 1.08;
     letter-spacing: -0.5px;
 }
 .quote .gold { color: #c9a876; }
