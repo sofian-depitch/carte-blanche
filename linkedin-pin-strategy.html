@@ -32,17 +32,18 @@ body {
     color: #c9a876;
 }
 
-/* CENTER BAND — anchored LEFT 75% to survive LinkedIn mobile left-shift crop */
+/* CENTER BAND — text constrained to inner 800px to survive carousel crop */
 .center {
     position: absolute;
     top: 287px;
-    left: 80px;
-    width: 820px; /* fits in left 75% of 1200 */
+    left: 0;
+    right: 0;
     height: 626px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 40px 200px;
 }
 .quote {
     font-family: 'DM Serif Display', Georgia, serif;
