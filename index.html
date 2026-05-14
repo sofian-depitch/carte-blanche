@@ -683,6 +683,20 @@
                 padding: 2.25rem;
             }
 
+            /* hero-left right-border becomes bottom-border in stacked mobile */
+            .hero-left {
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+            }
+
+            /* geo line: allow wrap on mobile (nowrap forces hero wider than viewport) */
+            .hero-geo {
+                white-space: normal;
+                overflow: visible;
+                text-overflow: clip;
+                line-height: 1.55;
+            }
+
             .hero-left > .hero-label:last-child {
                 margin-top: 1.75rem;
             }
@@ -700,6 +714,17 @@
             .about-left {
                 border-right: none;
                 border-bottom: 1px solid var(--border-dark);
+            }
+
+            /* footer: stack vertically, drop side-by-side flex */
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+            .footer-brand {
+                letter-spacing: 0.16em;
+                line-height: 1.5;
             }
         }
     </style>
