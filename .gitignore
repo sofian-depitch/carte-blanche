@@ -1,0 +1,10 @@
+# --- Fichiers système / environnement local ---
+.DS_Store
+.claude/
+
+# --- Dossiers d'organisation locale (non publiés sur le site) ---
+archives/
+brouillons/
+recherche/
+sources-design/
+visuels-de-marque/
