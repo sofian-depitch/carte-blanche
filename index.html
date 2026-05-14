@@ -689,12 +689,14 @@
                 border-bottom: 1px solid var(--border-light);
             }
 
-            /* geo line: allow wrap on mobile (nowrap forces hero wider than viewport) */
+            /* geo line: allow wrap on mobile + explicit top margin (space-between
+               doesn't visually separate when content stacks at natural height) */
             .hero-geo {
                 white-space: normal;
                 overflow: visible;
                 text-overflow: clip;
                 line-height: 1.55;
+                margin-top: 1.75rem;
             }
 
             .hero-left > .hero-label:last-child {
