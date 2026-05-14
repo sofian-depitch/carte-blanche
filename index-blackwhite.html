@@ -6,18 +6,20 @@
     <title>Carte Blanche | Private Speech Advisory</title>
     <meta name="description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Open Graph / Link Preview -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Carte Blanche | Private Speech Advisory">
     <meta property="og:description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer.">
     <meta property="og:image" content="https://carteblanche.tokyo/og-image.png?v=2">
     <meta property="og:url" content="https://carteblanche.tokyo">
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Carte Blanche | Private Speech Advisory">
     <meta name="twitter:description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer.">
     <meta name="twitter:image" content="https://carteblanche.tokyo/og-image.png?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -26,22 +28,17 @@
         }
 
         :root {
-            /* DESIGN SYSTEM TOKENS */
-            --bg:               #050409;       /* ink-deep */
-            --card:             #F2EDE3;       /* paper */
-            --card-dark:        #0B0A12;       /* ink-soft */
-            --text-dark:        #1A140C;       /* ink-on-paper */
-            --text-light:       #F2EDE3;       /* paper */
-            --text-muted-dark:  rgba(26, 20, 12, 0.74);   /* ink-on-paper-dim */
-            --text-muted-light: rgba(242, 237, 227, 0.74);/* paper-dim */
-            --text-mute-dark:   rgba(26, 20, 12, 0.50);
-            --text-mute-light:  rgba(242, 237, 227, 0.55);
-            --border-dark:      rgba(20, 17, 12, 0.14);
-            --border-light:     rgba(242, 237, 227, 0.16);
-            --gold:             #C9A876;
-            --gold-deep:        #8C7551;
-            --sans:             'Inter', -apple-system, sans-serif;
-            --mono:             'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+            --bg: #0c0c0c;
+            --card: #f5f2ed;
+            --card-dark: #1a1a1a;
+            --text-dark: #0c0c0c;
+            --text-light: #f5f2ed;
+            --text-muted-dark: #6b6560;
+            --text-muted-light: #a8a29e;
+            --border-dark: rgba(12,12,12,0.12);
+            --border-light: rgba(245,242,237,0.1);
+            --sans: 'Inter', -apple-system, sans-serif;
+            --serif: 'DM Serif Display', Georgia, serif;
         }
 
         html {
@@ -60,12 +57,9 @@
         }
 
         ::selection {
-            background: var(--gold);
+            background: var(--card);
             color: var(--bg);
         }
-
-        /* ── GOLD DOT (signature punctuation) ── */
-        .dot { color: var(--gold); }
 
         /* ── NAV ── */
         nav {
@@ -78,9 +72,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 3rem;
-            background: rgba(5, 4, 9, 0.92);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: var(--bg);
             border-bottom: 1px solid var(--border-light);
         }
 
@@ -88,30 +80,28 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: 1.5rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: var(--gold);
+        }
+
+        .nav-logo img {
+            height: 44px;
+            filter: invert(1);
         }
 
         .nav-contact {
-            font-family: var(--mono);
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 500;
-            letter-spacing: 0.32em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             color: var(--text-light);
             text-decoration: none;
-            padding: 0.7rem 1.5rem;
-            border: 1px solid rgba(201, 168, 118, 0.55);
-            transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+            padding: 0.6rem 1.5rem;
+            border: 1px solid rgba(245,242,237,0.25);
+            border-radius: 4px;
+            transition: all 0.25s;
         }
 
         .nav-contact:hover {
-            background: var(--gold);
-            border-color: var(--gold);
+            background: var(--card);
             color: var(--bg);
         }
 
@@ -127,18 +117,18 @@
 
         /* ── HERO ── */
         .hero {
-            padding-top: calc(56px + 6rem);
+            padding-top: calc(52px + 6rem);
             padding-bottom: 4rem;
         }
 
         .hero-card {
-            background: var(--bg);
-            color: var(--text-light);
+            background: var(--card);
+            color: var(--text-dark);
+            border-radius: 12px;
             overflow: hidden;
             display: grid;
             grid-template-columns: 1fr 1fr;
             min-height: 520px;
-            border: 1px solid var(--border-light);
         }
 
         .hero-left {
@@ -146,50 +136,33 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border-right: 1px solid var(--border-light);
         }
 
         .hero-label {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.42em;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--text-mute-light);
+            color: var(--text-muted-dark);
         }
 
         .hero-title {
-            font-family: var(--sans);
             font-weight: 900;
             font-size: clamp(2.5rem, 5vw, 4.5rem);
             line-height: 0.92;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.03em;
             text-transform: uppercase;
             margin: 1.5rem 0;
-            color: var(--text-light);
-        }
-
-        .hero-title .gold { color: var(--gold); }
-
-        .hero-geo {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: 0.78rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-mute-light);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         .hero-right {
-            background: var(--card);
-            color: var(--text-dark);
+            background: var(--card-dark);
+            color: var(--text-light);
             padding: 3.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            border-radius: 0 12px 12px 0;
             position: relative;
             overflow: hidden;
         }
@@ -199,22 +172,16 @@
             position: absolute;
             top: -50%;
             right: -30%;
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, rgba(140, 117, 81, 0.12) 0%, rgba(140, 117, 81, 0.03) 30%, transparent 65%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(245,242,237,0.04) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .hero-right > * { position: relative; z-index: 1; }
-
-        .hero-right .hero-label {
-            color: var(--text-mute-dark);
-        }
-
         .hero-sub {
-            font-size: 0.92rem;
-            line-height: 1.65;
-            color: var(--text-muted-dark);
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: #c8c3bc;
             max-width: 380px;
             margin-bottom: 2rem;
         }
@@ -225,12 +192,11 @@
         }
 
         .hero-meta-item {
-            font-family: var(--mono);
-            font-size: 0.72rem;
+            font-size: 0.65rem;
             font-weight: 500;
-            letter-spacing: 0.32em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--text-mute-dark);
+            color: var(--text-muted-light);
         }
 
         /* ── SECTION HEADER ── */
@@ -239,47 +205,51 @@
         }
 
         .section-tag {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.42em;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--text-mute-light);
+            color: var(--text-muted-light);
             margin-bottom: 1.5rem;
         }
 
         .section-title {
-            font-family: var(--sans);
             font-weight: 900;
             font-size: clamp(2.2rem, 4.5vw, 4rem);
             line-height: 0.95;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.03em;
             text-transform: uppercase;
-            color: var(--text-light);
+        }
+
+        .section-title-sm {
+            font-weight: 800;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
         }
 
         /* ── CARD SYSTEM ── */
         .card {
             background: var(--card);
             color: var(--text-dark);
+            border-radius: 12px;
             padding: 2.5rem;
-            border: 1px solid var(--border-light);
         }
 
         .card-dark {
             background: var(--card-dark);
             color: var(--text-light);
+            border-radius: 12px;
             padding: 2.5rem;
-            border: 1px solid var(--border-light);
         }
 
         .card-label {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--gold-deep);
+            color: var(--text-muted-dark);
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid var(--border-dark);
@@ -288,44 +258,28 @@
         }
 
         .card-dark .card-label {
-            color: var(--gold);
+            color: var(--text-muted-light);
             border-bottom-color: var(--border-light);
         }
 
         .card-title {
-            font-family: var(--sans);
             font-weight: 900;
             font-size: clamp(1.8rem, 3.5vw, 3rem);
             line-height: 0.95;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
         }
 
         .card-text {
-            font-size: 0.92rem;
-            line-height: 1.75;
+            font-size: 0.88rem;
+            line-height: 1.8;
             color: var(--text-muted-dark);
         }
 
         .card-dark .card-text {
             color: var(--text-muted-light);
         }
-
-        /* GOLD-GLOW CARD — climax / verdict (dark slab + ambient gold halo) */
-        .card-gold {
-            background: var(--card-dark);
-            color: var(--text-light);
-            padding: 2.5rem;
-            border: 1px solid var(--gold);
-            box-shadow:
-                inset 0 0 80px rgba(201, 168, 118, 0.06),
-                0 0 0 1px rgba(201, 168, 118, 0.12),
-                0 12px 36px rgba(201, 168, 118, 0.10);
-            position: relative;
-        }
-        .card-gold .process-num { color: var(--gold); opacity: 1; }
-        .card-gold .process-desc { color: var(--text-muted-light); }
 
         .card-text + .card-text {
             margin-top: 1rem;
@@ -335,22 +289,20 @@
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--border-light);
-            border: 1px solid var(--border-light);
+            gap: 1rem;
         }
-
-        .grid-2 > * { border: none; }
 
         .grid-3 {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 1px;
-            background: var(--border-light);
-            border: 1px solid var(--border-light);
+            gap: 1rem;
         }
 
-        .grid-3 > * { border: none; }
+        .grid-split {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1rem;
+        }
 
         /* ── SERVICE LIST ── */
         .service-list {
@@ -363,7 +315,7 @@
             align-items: center;
             padding: 1.1rem 0;
             border-bottom: 1px solid var(--border-dark);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: padding-left 0.2s;
         }
 
@@ -376,12 +328,9 @@
         }
 
         .service-num {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-            color: var(--gold-deep);
-            text-transform: uppercase;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-muted-dark);
         }
 
         .service-name {
@@ -390,10 +339,8 @@
 
         .service-icon {
             text-align: right;
-            font-family: var(--mono);
-            font-size: 0.95rem;
-            color: var(--gold);
-            opacity: 0.55;
+            font-size: 0.8rem;
+            opacity: 0.3;
         }
 
         .card-dark .service-item {
@@ -405,55 +352,43 @@
         }
 
         .card-dark .service-num {
-            color: var(--gold);
+            color: var(--text-muted-light);
         }
 
         /* ── PROCESS CARDS ── */
         .process-num {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--gold-deep);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--text-muted-dark);
             margin-bottom: 1.5rem;
         }
 
-        .card-dark .process-num,
-        .card-outline .process-num {
-            color: var(--gold);
-        }
-
         .process-name {
-            font-family: var(--sans);
-            font-weight: 900;
+            font-weight: 800;
             font-size: 1.4rem;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
             text-transform: uppercase;
             margin-bottom: 0.8rem;
         }
 
         .process-desc {
-            font-size: 0.86rem;
+            font-size: 0.82rem;
             line-height: 1.7;
             color: var(--text-muted-dark);
         }
-
-        .card-dark .process-desc { color: var(--text-muted-light); }
 
         /* ── HOW I WORK ── */
         .coaching-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--border-light);
-            border: 1px solid var(--border-light);
+            gap: 1rem;
         }
-        .coaching-grid > * { border: none; }
 
         .coaching-card {
             background: var(--card);
             color: var(--text-dark);
+            border-radius: 12px;
             padding: 2.5rem;
             display: flex;
             flex-direction: column;
@@ -467,29 +402,27 @@
         }
 
         .coaching-num {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.42em;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--gold-deep);
+            color: var(--text-muted-dark);
         }
 
         .coaching-card.dark .coaching-num {
-            color: var(--gold);
+            color: var(--text-muted-light);
         }
 
         .coaching-title {
-            font-family: var(--sans);
-            font-weight: 900;
+            font-weight: 800;
             font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
             margin-bottom: 0.6rem;
         }
 
         .coaching-text {
-            font-size: 0.86rem;
+            font-size: 0.82rem;
             line-height: 1.7;
             color: var(--text-muted-dark);
         }
@@ -502,10 +435,10 @@
         .about-card {
             background: var(--card);
             color: var(--text-dark);
+            border-radius: 12px;
             overflow: hidden;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            border: 1px solid var(--border-light);
         }
 
         .about-left {
@@ -517,21 +450,19 @@
         }
 
         .about-name {
-            font-family: var(--sans);
             font-weight: 900;
             font-size: 2.2rem;
             line-height: 1;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             text-transform: uppercase;
         }
 
         .about-stat {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--text-mute-dark);
+            color: var(--text-muted-dark);
         }
 
         .about-right {
@@ -541,77 +472,68 @@
             justify-content: center;
         }
 
+        .about-quote {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-style: italic;
+            line-height: 1.7;
+            color: var(--text-muted-dark);
+            padding: 1.5rem;
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
         /* ── CONTACT ── */
         .contact-card {
             background: var(--card);
             color: var(--text-dark);
+            border-radius: 12px;
             padding: 5rem 3rem;
             text-align: center;
-            border: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
         }
-
-        .contact-card::after {
-            content: '';
-            position: absolute;
-            bottom: -150px;
-            right: -150px;
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, rgba(201, 168, 118, 0.18) 0%, transparent 65%);
-            pointer-events: none;
-        }
-
-        .contact-card > * { position: relative; z-index: 1; }
 
         .contact-title {
-            font-family: var(--sans);
             font-weight: 900;
             font-size: clamp(2rem, 4vw, 3.5rem);
             line-height: 0.95;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.03em;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
-            color: var(--text-dark);
         }
 
         .contact-text {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             color: var(--text-muted-dark);
             max-width: 440px;
             margin: 0 auto 2.5rem;
-            line-height: 1.75;
+            line-height: 1.8;
         }
 
         .contact-email {
             display: inline-block;
-            font-family: var(--sans);
-            font-size: 0.92rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: none;
-            padding: 1.05rem 2.5rem;
-            background: var(--bg);
-            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-dark);
             text-decoration: none;
-            transition: background 0.15s ease, color 0.15s ease;
-            border: 1px solid var(--bg);
+            padding: 1rem 2.5rem;
+            background: var(--bg);
+            color: var(--text-light);
+            border-radius: 6px;
+            transition: all 0.25s;
         }
 
         .contact-email:hover {
-            background: var(--gold);
-            color: var(--bg);
-            border-color: var(--gold);
+            background: #2a2a2a;
+            transform: translateY(-1px);
         }
 
         .contact-note {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--text-mute-dark);
+            color: var(--text-muted-dark);
             margin-top: 1.5rem;
         }
 
@@ -626,34 +548,38 @@
         }
 
         .footer-brand {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--text-mute-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--text-muted-light);
         }
-
-        .footer-brand .dot { color: var(--gold); }
 
         .footer-copy {
-            font-family: var(--mono);
             font-size: 0.7rem;
-            letter-spacing: 0.22em;
-            color: var(--text-mute-light);
+            color: var(--text-muted-light);
         }
 
-        /* ── DIVIDER TEXT (method) ── */
+        /* ── DIVIDER TEXT ── */
         .divider-text {
             text-align: center;
             padding: 4rem 0;
+        }
+
+        .divider-text p {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-muted-light);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
         /* ── ANIMATIONS ── */
         .reveal {
             opacity: 0;
             transform: translateY(24px);
-            transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
         .reveal.visible {
@@ -670,7 +596,7 @@
 
             .hero-card,
             .grid-2,
-            .grid-3,
+            .grid-split,
             .coaching-grid,
             .about-card {
                 grid-template-columns: 1fr;
@@ -681,6 +607,14 @@
             .about-left,
             .about-right {
                 padding: 2.25rem;
+            }
+
+            .hero-right {
+                border-radius: 0 0 12px 12px;
+            }
+
+            .hero-right .hero-label[style*="hidden"] {
+                display: none;
             }
 
             .hero-left > .hero-label:last-child {
@@ -701,6 +635,10 @@
                 border-right: none;
                 border-bottom: 1px solid var(--border-dark);
             }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -708,7 +646,7 @@
 
     <!-- NAV -->
     <nav>
-        <a href="#" class="nav-logo">Carte Blanche</a>
+        <a href="#" class="nav-logo"><img src="CarteBlanche_Logo_BLACK.png" alt="Carte Blanche"></a>
         <a href="#contact" class="nav-contact">Contact</a>
     </nav>
 
@@ -720,16 +658,16 @@
                 <div class="hero-left">
                     <div class="hero-label">Private Speech Advisory</div>
                     <div>
-                        <h1 class="hero-title">Sharpness<span class="dot">.</span><br>Density<span class="dot">.</span><br><span class="gold">Precision.</span></h1>
-                        <p style="font-family:var(--sans);font-size:0.92rem;font-weight:400;letter-spacing:0;color:var(--text-muted-light);margin-top:1.6rem;max-width:380px;line-height:1.65;">For Country GMs, Regional Leaders &amp; Brand Presidents in Luxury and Consumer.</p>
+                        <h1 class="hero-title">Sharpness.<br>Density.<br>Precision.</h1>
+                        <p style="font-size:0.78rem;font-weight:500;letter-spacing:0.04em;color:var(--text-muted-dark);margin-top:1.2rem;max-width:340px;line-height:1.5;">For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer.</p>
                     </div>
-                    <div class="hero-geo">Paris &middot; Singapore &middot; Shanghai &middot; Hong Kong &middot; Seoul &middot; Tokyo</div>
+                    <div class="hero-label">Paris · Singapore · Shanghai · Hong Kong · Seoul · Tokyo</div>
                 </div>
                 <div class="hero-right">
                     <div class="hero-label" style="visibility:hidden;">&#8203;</div>
                     <div>
                         <p class="hero-sub" style="margin-bottom:1.2rem;">Excom, Group Mancom, Senior Leadership. Impatient, hard to impress, looking for a reason to say no.</p>
-                        <p class="hero-sub" style="margin-bottom:0;">Substance isn't enough. One angle that doesn't hold. Ambiguity becomes the pretext to defer or decline.</p>
+                        <p class="hero-sub" style="margin-bottom:0;">Substance isn't enough. One angle that doesn't hold. Ambiguity becomes the reason to defer or decline.</p>
                     </div>
                     <div class="hero-meta">
                         <div class="hero-meta-item">Est. 2016</div>
@@ -740,42 +678,42 @@
         </section>
 
         <div class="reveal" style="text-align:center;padding:1rem 0 3rem;">
-            <p style="font-family:var(--mono);font-size:0.72rem;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--text-mute-light);">Engaged by C-suite leaders at CAC 40, Fortune 500, and government bodies</p>
+            <p style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted-light);">Engaged by C-suite leaders at CAC 40, Fortune 500, and government bodies</p>
         </div>
 
         <!-- ━━━ THE SITUATIONS ━━━ -->
         <section>
             <div class="section-header reveal">
                 <div class="section-tag">The Practice</div>
-                <h2 class="section-title">Where mandates<br>are decided<span class="dot">.</span></h2>
+                <h2 class="section-title">Where mandates<br>are decided.</h2>
             </div>
             <div class="grid-2 reveal">
                 <div class="card">
                     <div class="card-label"><span>Service</span><span>Situations</span></div>
                     <div class="card-title">The<br>Situations</div>
                     <ul class="service-list" style="margin-top:2rem;">
-                        <li class="service-item"><span class="service-num">N&deg;01</span><span class="service-name">First address after a promotion or new role</span><span class="service-icon">+</span></li>
-                        <li class="service-item"><span class="service-num">N&deg;02</span><span class="service-name">Annual business review with Group leadership</span><span class="service-icon">+</span></li>
-                        <li class="service-item"><span class="service-num">N&deg;03</span><span class="service-name">Internal conventions and town halls</span><span class="service-icon">+</span></li>
-                        <li class="service-item"><span class="service-num">N&deg;04</span><span class="service-name">Launch of a regional HQ, BU, or innovation center</span><span class="service-icon">+</span></li>
-                        <li class="service-item"><span class="service-num">N&deg;05</span><span class="service-name">Press and brand spokesperson moments</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">01</span><span class="service-name">First address after a promotion or new role</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">02</span><span class="service-name">Annual business review with Group leadership</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">03</span><span class="service-name">Internal conventions and town halls</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">04</span><span class="service-name">Launch of a regional HQ, BU, or innovation center</span><span class="service-icon">+</span></li>
+                        <li class="service-item"><span class="service-num">05</span><span class="service-name">Press and brand spokesperson moments</span><span class="service-icon">+</span></li>
                     </ul>
                 </div>
                 <div class="card-dark">
                     <div class="card-label"><span>Engagement</span><span>Terms</span></div>
                     <div style="margin-bottom:2rem;">
-                        <p class="card-title" style="color:var(--text-light);">One discipline<span class="dot">.</span><br>Three forms<span class="dot">.</span></p>
+                        <p style="font-weight:800;font-size:1.6rem;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.15;margin-bottom:2rem;color:var(--text-light);">One discipline.<br>Three forms.</p>
                         <div style="display:flex;flex-direction:column;gap:1.5rem;">
                             <div>
-                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;"><span style="color:var(--gold);">+</span> Single-speech intensive</p>
+                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;">+ Single-speech intensive</p>
                                 <p class="card-text" style="margin:0;">One speech, prepared end to end. Three to five weeks.</p>
                             </div>
                             <div>
-                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;"><span style="color:var(--gold);">+</span> Yearly retainer</p>
+                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;">+ Yearly retainer</p>
                                 <p class="card-text" style="margin:0;">For when the stakes return.</p>
                             </div>
                             <div>
-                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;"><span style="color:var(--gold);">+</span> Last-minute intensive</p>
+                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;">+ Last-minute intensive</p>
                                 <p class="card-text" style="margin:0;">48 to 72 hours before the moment.</p>
                             </div>
                         </div>
@@ -784,54 +722,57 @@
             </div>
         </section>
 
-        <div class="spacer-sm"></div>
+        <div class="spacer"></div>
 
         <!-- ━━━ THE METHOD ━━━ -->
-        <section class="reveal" style="text-align:center;padding:1rem 0;">
-            <div class="section-tag" style="margin-bottom:2rem;">The Method</div>
-            <p style="font-family:var(--sans);font-weight:900;font-size:clamp(1.6rem,2.8vw,2.4rem);line-height:1.2;letter-spacing:-0.025em;text-transform:uppercase;color:var(--text-light);max-width:780px;margin:0 auto 1.5rem;">&ldquo;The strategy is yours<span class="dot">.</span><br>How it lands, leave it to me<span class="dot">.</span>&rdquo;</p>
-            <div style="width:60px;height:1px;background:var(--gold);opacity:0.85;margin:1.5rem auto;"></div>
-            <p style="font-size:0.92rem;letter-spacing:0.02em;color:var(--text-muted-light);max-width:600px;margin:0 auto;line-height:1.85;">70% substance. 30% form. The work happens upstream of the speech: angle, narrative arc, logic of argument, anticipation of objections.</p>
+        <section class="reveal" style="text-align:center;padding:2rem 0;">
+            <div class="section-tag" style="margin-bottom:2.5rem;">The Method</div>
+            <p style="font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.45;color:var(--text-light);max-width:780px;margin:0 auto 2.5rem;">"The strategy is yours.<br>How it lands, leave it to me."</p>
+            <p style="font-size:0.88rem;letter-spacing:0.02em;color:var(--text-muted-light);max-width:600px;margin:0 auto;line-height:1.85;">70% substance. 30% form. The work happens upstream of the speech: angle, narrative arc, logic of argument, anticipation of objections.</p>
         </section>
 
-        <div class="spacer-sm"></div>
+        <div class="spacer"></div>
 
         <!-- ━━━ PROCESS ━━━ -->
         <section>
             <div class="section-header reveal">
                 <div class="section-tag">The Protocol</div>
-                <h2 class="section-title">Five phases<span class="dot">.</span><br>End to end<span class="dot">.</span></h2>
+                <h2 class="section-title">Five phases.<br>End to end.</h2>
             </div>
-            <div class="grid-2 reveal">
+            <div class="grid-2 reveal" style="margin-bottom:1rem;">
                 <div class="card-dark">
-                    <div class="process-num">Phase N&deg;01</div>
-                    <div class="process-name">Strategic Reframing<span class="dot">.</span></div>
-                    <p class="process-desc">Map the audience. Who supports. Who detracts. Find the angle that repositions the speech before a single slide is touched.</p>
+                    <div class="process-num" style="color:var(--text-muted-light);">Phase 001</div>
+                    <div class="process-name" style="color:var(--text-light);">Strategic Reframing</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">Map the audience. Who supports. Who detracts. Find the angle that repositions the speech before a single slide is touched.</p>
                 </div>
                 <div class="card">
-                    <div class="process-num">Phase N&deg;02</div>
-                    <div class="process-name">Narrative Architecture<span class="dot">.</span></div>
+                    <div class="process-num">Phase 002</div>
+                    <div class="process-name">Narrative Architecture</div>
                     <p class="process-desc">Build the skeleton. The opening that earns attention. The single idea they must leave with. The close that locks the verdict.</p>
                 </div>
+            </div>
+            <div class="grid-2 reveal" style="margin-bottom:1rem;">
                 <div class="card">
-                    <div class="process-num">Phase N&deg;03</div>
-                    <div class="process-name">Argument Sequencing<span class="dot">.</span></div>
+                    <div class="process-num">Phase 003</div>
+                    <div class="process-name">Argument Sequencing</div>
                     <p class="process-desc">Order the proofs. Control when they agree, when they question, when they concede. Sequence is leverage.</p>
                 </div>
                 <div class="card-dark">
-                    <div class="process-num">Phase N&deg;04</div>
-                    <div class="process-name">Adversarial Pressure<span class="dot">.</span></div>
-                    <p class="process-desc">Attack the argument before the audience does. Surface every weakness, every ambiguity, every line that invites the wrong question.</p>
+                    <div class="process-num" style="color:var(--text-muted-light);">Phase 004</div>
+                    <div class="process-name" style="color:var(--text-light);">Adversarial Pressure</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">Attack the argument before the audience does. Surface every weakness, every ambiguity, every line that invites the wrong question.</p>
                 </div>
+            </div>
+            <div class="grid-2 reveal">
                 <div class="card-dark">
-                    <div class="process-num">Phase N&deg;05</div>
-                    <div class="process-name">Full Simulation<span class="dot">.</span></div>
-                    <p class="process-desc">Rehearsal under real conditions. Pacing, presence, authority. Every pause, every answer to the question you don't want asked.</p>
+                    <div class="process-num" style="color:var(--text-muted-light);">Phase 005</div>
+                    <div class="process-name" style="color:var(--text-light);">Full Simulation</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">Rehearsal under real conditions. Pacing, presence, authority. Every pause, every answer to the question you don't want asked.</p>
                 </div>
-                <div class="card-gold">
-                    <div class="process-num">The result</div>
-                    <div class="process-name">You walk in sharp<span class="dot">.</span></div>
-                    <p class="process-desc">Every word precise. Every minute dense. A message built to hit under any pressure.</p>
+                <div class="card" style="background:transparent;border:1px solid var(--border-light);color:var(--text-light);">
+                    <div class="process-num" style="color:var(--text-muted-light);">The result</div>
+                    <div class="process-name" style="color:var(--text-light);">You walk in sharp.</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">Every word precise. Every minute dense. A message built to hit under any pressure.</p>
                 </div>
             </div>
         </section>
@@ -842,22 +783,22 @@
         <section>
             <div class="section-header reveal">
                 <div class="section-tag">The Outcomes</div>
-                <h2 class="section-title">What<br>followed<span class="dot">.</span></h2>
+                <h2 class="section-title">What<br>followed.</h2>
             </div>
             <div class="grid-3 reveal">
                 <div class="card">
                     <div class="process-num">Outcome</div>
-                    <div class="process-name">Annual review.<br>Audience held<span class="dot">.</span></div>
-                    <p class="process-desc">Global Brand GM defending strategy in front of Group leadership. Mandate approved before Q&amp;A. Promoted two years later.</p>
+                    <div class="process-name">Annual review. Audience held.</div>
+                    <p class="process-desc">Global Brand GM defending strategy in front of Group leadership. Mandate approved before Q&A. Promoted two years later.</p>
                 </div>
                 <div class="card-dark">
-                    <div class="process-num">Outcome</div>
-                    <div class="process-name">First address.<br>Authority established<span class="dot">.</span></div>
-                    <p class="process-desc">A newly appointed executive's first address to the organization. Tone established. No challenge to direction.</p>
+                    <div class="process-num" style="color:var(--text-muted-light);">Outcome</div>
+                    <div class="process-name" style="color:var(--text-light);">First address. Authority established.</div>
+                    <p class="process-desc" style="color:var(--text-muted-light);">A newly appointed executive's first address to the organization. Tone established. No challenge to direction.</p>
                 </div>
                 <div class="card">
                     <div class="process-num">Outcome</div>
-                    <div class="process-name">Portfolio strategy.<br>$5B cession. Promoted<span class="dot">.</span></div>
+                    <div class="process-name">Portfolio strategy. $5B cession. Promoted.</div>
                     <p class="process-desc">Business Unit Director defending portfolio strategy during a $5B cession. Named Marketing Director and Board Member of the new entity.</p>
                 </div>
             </div>
@@ -869,35 +810,37 @@
         <section>
             <div class="section-header reveal">
                 <div class="section-tag">Working Style</div>
-                <h2 class="section-title">How I<br>Work<span class="dot">.</span></h2>
+                <h2 class="section-title">How I<br>Work</h2>
             </div>
 
-            <div class="coaching-grid reveal">
+            <div class="coaching-grid reveal" style="margin-bottom:1rem;">
                 <div class="coaching-card">
                     <div class="coaching-num">Principle 01</div>
                     <div>
-                        <div class="coaching-title">Direct by design<span class="dot">.</span></div>
+                        <div class="coaching-title">Direct by design</div>
                         <p class="coaching-text">I don't build the presentation. I challenge it. Every assumption, every slide, every line. The structure collapses here, not on the day.</p>
                     </div>
                 </div>
                 <div class="coaching-card dark">
                     <div class="coaching-num">Principle 02</div>
                     <div>
-                        <div class="coaching-title">Situation-first, not method-first<span class="dot">.</span></div>
+                        <div class="coaching-title" style="color:var(--text-light);">Situation-first, not method-first</div>
                         <p class="coaching-text">Every preparation starts from your specific situation. The method follows, never the reverse.</p>
                     </div>
                 </div>
+            </div>
+            <div class="coaching-grid reveal">
                 <div class="coaching-card">
                     <div class="coaching-num">Principle 03</div>
                     <div>
-                        <div class="coaching-title">Obsession with the first 90 seconds<span class="dot">.</span></div>
+                        <div class="coaching-title">Obsession with the first 90 seconds</div>
                         <p class="coaching-text">The decision is made in the opening. Lose them in the first 90 seconds, and no argument recovers it.</p>
                     </div>
                 </div>
                 <div class="coaching-card dark">
                     <div class="coaching-num">Principle 04</div>
                     <div>
-                        <div class="coaching-title">Invisible by intent<span class="dot">.</span></div>
+                        <div class="coaching-title" style="color:var(--text-light);">Invisible by intent</div>
                         <p class="coaching-text">No methodology to credit. No brand to mention. The only people who know I exist are the ones you would refer me to.</p>
                     </div>
                 </div>
@@ -910,17 +853,17 @@
         <section>
             <div class="section-header reveal">
                 <div class="section-tag">The Partner</div>
-                <h2 class="section-title">Sofian<br>Meguellati<span class="dot">.</span></h2>
+                <h2 class="section-title">Sofian<br>Meguellati</h2>
             </div>
             <div class="about-card reveal">
                 <div class="about-left">
                     <div>
-                        <div class="about-name">10 Years<span class="dot">.</span><br>100+ Engagements<span class="dot">.</span></div>
+                        <div class="about-name">10 Years.<br>100+ Engagements.</div>
                     </div>
                     <div style="margin-top:2.5rem;">
                         <div class="about-stat" style="margin-bottom:0.5rem;">L'Oréal</div>
                         <div class="about-stat" style="margin-bottom:0.5rem;">Marriott</div>
-                        <div class="about-stat" style="margin-bottom:0.5rem;">P&amp;G</div>
+                        <div class="about-stat" style="margin-bottom:0.5rem;">P&G</div>
                         <div class="about-stat" style="margin-bottom:0.5rem;">Unilever</div>
                         <div class="about-stat" style="margin-bottom:0.5rem;">Disney</div>
                         <div class="about-stat" style="margin-bottom:0.5rem;">Dole</div>
@@ -928,7 +871,7 @@
                 </div>
                 <div class="about-right">
                     <p class="card-text">For 10+ years, I've prepared GMs and Brand Presidents at the world's leading luxury beauty, hospitality, consumer goods, and entertainment groups. On the speeches that decide mandates, budgets, and roles.</p>
-                    <p class="card-text" style="margin-top:1rem;">What I bring is the pattern recognition from 100+ engagements that delivered the outcome. I know what works, what doesn't, and what flips the verdict.</p>
+                    <p class="card-text">What I bring is the pattern recognition from 100+ engagements that delivered the outcome. I know what works, what doesn't, and what flips the verdict.</p>
                 </div>
             </div>
         </section>
@@ -938,11 +881,11 @@
         <!-- ━━━ CONTACT ━━━ -->
         <section id="contact">
             <div class="contact-card reveal">
-                <div class="contact-title">When the speech<br>decides the mandate<span class="dot">.</span></div>
+                <div class="contact-title">When the speech<br>decides the mandate.</div>
                 <p class="contact-text">First address. Annual review. Convention. If the angle isn't there yet, reach out.</p>
                 <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
                     <a href="mailto:sofian@hack40.com" class="contact-email">sofian@hack40.com</a>
-                    <a href="https://wa.me/33625320678" style="font-family:var(--sans);font-size:0.85rem;font-weight:600;letter-spacing:0.02em;color:var(--text-muted-dark);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:0.2rem;" target="_blank" rel="noopener">or WhatsApp +33 6 25 32 06 78</a>
+                    <a href="https://wa.me/33625320678" style="font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted-dark);text-decoration:none;border-bottom:1px solid var(--border-dark);padding-bottom:0.2rem;" target="_blank" rel="noopener">or WhatsApp +33 6 25 32 06 78</a>
                 </div>
                 <p class="contact-note">Engagements held in strict confidence</p>
             </div>
@@ -950,7 +893,7 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <div class="footer-brand">Carte Blanche<span class="dot">.</span> &middot; Paris &middot; Singapore &middot; Shanghai &middot; Hong Kong &middot; Seoul &middot; Tokyo</div>
+            <div class="footer-brand">Carte Blanche | Paris · Singapore · Shanghai · Hong Kong · Seoul · Tokyo</div>
             <div class="footer-copy">&copy; 2026</div>
         </footer>
     </div>
