@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&amp;display=swap');
+      .wordmark {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 900;
+        font-size: 168px;
+        letter-spacing: -10.08px;
+        fill: #1A140C;
+      }
+    </style>
+  </defs>
+  <rect width="800" height="800" fill="#F2EDE3"/>
+  <text class="wordmark" x="400" y="395" text-anchor="middle">CARTE</text>
+  <text class="wordmark" x="400" y="543" text-anchor="middle">BLANCHE</text>
+</svg>
