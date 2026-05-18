@@ -543,6 +543,14 @@
             justify-content: center;
         }
 
+        .about-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+        }
+
         /* ── CONTACT ── */
         .contact-card {
             background: var(--card);
@@ -663,6 +671,69 @@
             transform: translateY(0);
         }
 
+        /* ── CLIENT LOGOS (subtle, embedded in dark flow) ── */
+        .client-logos {
+            padding: 4rem 0;
+            margin-top: -4rem;
+        }
+
+        .client-logos-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .client-logo {
+            height: 32px;
+            width: auto;
+            max-width: 100%;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        .client-logo[alt="L'Oréal"] { height: 22px; }
+        .client-logo[alt="Marriott"] { height: 44px; }
+        .client-logo[alt="Unilever"] { height: 42px; }
+        .client-logo[alt="Dole"] { height: 38px; }
+
+        @media (hover: hover) and (pointer: fine) {
+            .client-logo:hover { opacity: 1; }
+        }
+
+        @media (max-width: 1024px) {
+            .client-logos { padding: 3.25rem 0; }
+            .client-logos-inner { gap: 28px; }
+            .client-logo { height: 28px; }
+            .client-logo[alt="L'Oréal"] { height: 18px; }
+            .client-logo[alt="Marriott"] { height: 38px; }
+            .client-logo[alt="Unilever"] { height: 36px; }
+            .client-logo[alt="Dole"] { height: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            .client-logos { padding: 2.75rem 0; }
+            .client-logos-inner {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 24px 12px;
+                place-items: center;
+            }
+            .client-logo {
+                height: 22px;
+                max-width: 100%;
+                width: auto;
+                min-width: 0;
+                object-fit: contain;
+            }
+            .client-logo[alt="L'Oréal"] { height: 15px; }
+            .client-logo[alt="Marriott"] { height: 30px; }
+            .client-logo[alt="Unilever"] { height: 28px; }
+            .client-logo[alt="Dole"] { height: 26px; }
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
             nav { padding: 1rem 1.5rem; }
@@ -760,13 +831,25 @@
                         <p class="hero-sub" style="margin-bottom:1.2rem;">Excom, Group Mancom, Senior Leadership. Impatient, hard to impress, looking for a reason to say no.</p>
                         <p class="hero-sub" style="margin-bottom:1.2rem;">One angle that doesn't hold. Ambiguity becomes the pretext to defer or decline.</p>
                         <p class="hero-sub" style="margin-bottom:1.2rem;">Build your signature pitch. Lock in the style that wins for you. Own the outcome.</p>
-                        <p class="hero-sub" style="margin-bottom:0;">Take this skill with you for the rest of your career.</p>
+                        <p class="hero-sub" style="margin-bottom:0;">A method that survives the moment. Repeatable. Yours.</p>
                     </div>
                     <div class="hero-meta">
                         <div class="hero-meta-item">Est. 2016</div>
                         <div class="hero-meta-item">8 to 10 engagements / year</div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ━━━ CLIENT LOGOS ━━━ -->
+        <section class="client-logos" aria-label="Client engagements">
+            <div class="client-logos-inner">
+                <img src="logos/loreal.png" alt="L'Oréal" class="client-logo">
+                <img src="logos/marriott.png" alt="Marriott" class="client-logo">
+                <img src="logos/pg.png" alt="P&amp;G" class="client-logo">
+                <img src="logos/unilever.png" alt="Unilever" class="client-logo">
+                <img src="logos/disney.png" alt="Disney" class="client-logo">
+                <img src="logos/dole.png" alt="Dole" class="client-logo">
             </div>
         </section>
 
@@ -874,18 +957,18 @@
             <div class="grid-3 reveal">
                 <div class="card">
                     <div class="process-num">Outcome</div>
-                    <div class="process-name">Annual review.<br>Audience held<span class="dot">.</span></div>
-                    <p class="process-desc">Global Brand GM defending strategy in front of Group leadership. Mandate approved before Q&amp;A. Promoted two years later.</p>
+                    <div class="process-name">$5B cession defended.<br>Mandate carried<span class="dot">.</span></div>
+                    <p class="process-desc">Business Unit Director defending portfolio strategy during a $5B cession.</p>
                 </div>
                 <div class="card-dark">
                     <div class="process-num">Outcome</div>
-                    <div class="process-name">First address.<br>Authority established<span class="dot">.</span></div>
-                    <p class="process-desc">A newly appointed executive's first address to the organization. Tone established. No challenge to direction.</p>
+                    <div class="process-name">Annual review.<br>Audience held<span class="dot">.</span></div>
+                    <p class="process-desc">Global Brand GM defending strategy in front of Group leadership. Mandate approved before Q&amp;A.</p>
                 </div>
                 <div class="card">
                     <div class="process-num">Outcome</div>
-                    <div class="process-name">Portfolio strategy.<br>$5B cession. Promoted<span class="dot">.</span></div>
-                    <p class="process-desc">Business Unit Director defending portfolio strategy during a $5B cession. Named Marketing Director and Board Member of the new entity.</p>
+                    <div class="process-name">First address.<br>Authority established<span class="dot">.</span></div>
+                    <p class="process-desc">A newly appointed executive's first address to the organization. Tone established. No challenge to direction.</p>
                 </div>
             </div>
         </section>
@@ -904,7 +987,7 @@
                     <div class="coaching-num">Principle 01</div>
                     <div>
                         <div class="coaching-title">Direct by design<span class="dot">.</span></div>
-                        <p class="coaching-text">I don't build slides. I build the argument. Every assumption, every line, every angle that doesn't hold. The structure collapses here, not on the day.</p>
+                        <p class="coaching-text">I don't build slides. I build the argument. The deck follows. Every assumption, every line, every angle that doesn't hold. The structure collapses here, not on the day.</p>
                     </div>
                 </div>
                 <div class="coaching-card dark">
@@ -941,21 +1024,18 @@
             </div>
             <div class="about-card reveal">
                 <div class="about-left">
-                    <div>
-                        <div class="about-name">10 Years<span class="dot">.</span><br>100+ Engagements<span class="dot">.</span></div>
-                    </div>
+                    <img src="sofian-2026.png" alt="Sofian Meguellati" class="about-photo">
                     <div style="margin-top:2.5rem;">
-                        <div class="about-stat" style="margin-bottom:0.5rem;">L'Oréal</div>
-                        <div class="about-stat" style="margin-bottom:0.5rem;">Marriott</div>
-                        <div class="about-stat" style="margin-bottom:0.5rem;">P&amp;G</div>
-                        <div class="about-stat" style="margin-bottom:0.5rem;">Unilever</div>
-                        <div class="about-stat" style="margin-bottom:0.5rem;">Disney</div>
-                        <div class="about-stat" style="margin-bottom:0.5rem;">Dole</div>
+                        <div class="about-name">10 Years<span class="dot">.</span><br>100+ Engagements<span class="dot">.</span></div>
                     </div>
                 </div>
                 <div class="about-right">
                     <p class="card-text">For 10+ years, I've prepared GMs and Brand Presidents at the world's leading luxury beauty, hospitality, consumer goods, and entertainment groups. On the pitches that decide mandates, budgets, and roles.</p>
                     <p class="card-text" style="margin-top:1rem;">What I bring is the pattern recognition from 100+ engagements that delivered the outcome. I know what works, what doesn't, and what flips the verdict.</p>
+                    <div style="margin-top:2rem;border-top:1px solid var(--border-dark);padding-top:1.5rem;">
+                        <div class="about-stat" style="margin-bottom:0.6rem;color:var(--gold-deep);">Asia Partner</div>
+                        <p class="card-text">Asia-based since 2018. Mandates run across Tokyo, Seoul, Shanghai, Hong Kong, Singapore.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -967,10 +1047,7 @@
             <div class="contact-card reveal">
                 <div class="contact-title">When the moment<br>decides the mandate<span class="dot">.</span></div>
                 <p class="contact-text">First address. Annual review. Convention. If the angle isn't there yet, send me an email.</p>
-                <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
-                    <a href="mailto:sofian@hack40.com" class="contact-email">sofian@hack40.com</a>
-                    <a href="https://wa.me/33625320678" style="font-family:var(--sans);font-size:0.85rem;font-weight:600;letter-spacing:0.02em;color:var(--text-muted-dark);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:0.2rem;" target="_blank" rel="noopener">or WhatsApp +33 6 25 32 06 78</a>
-                </div>
+                <a href="mailto:sofian@hack40.com" class="contact-email">sofian@hack40.com</a>
                 <p class="contact-note">Engagements held in strict confidence</p>
             </div>
         </section>
