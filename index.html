@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte Blanche | Private Pitch Advisory</title>
-    <meta name="description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer.">
+    <meta name="description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer. Based in Tokyo. In Asia since 2018. Sessions in English or French.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Carte Blanche | Private Pitch Advisory">
-    <meta property="og:description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer.">
+    <meta property="og:description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer. Based in Tokyo. In Asia since 2018. Sessions in English or French.">
     <meta property="og:image" content="https://carteblanche.tokyo/og-image.png?v=4">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://carteblanche.tokyo">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Carte Blanche | Private Pitch Advisory">
-    <meta name="twitter:description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer.">
+    <meta name="twitter:description" content="For Country GMs, Regional Leaders & Brand Presidents in Luxury and Consumer. Based in Tokyo. In Asia since 2018. Sessions in English or French.">
     <meta name="twitter:image" content="https://carteblanche.tokyo/og-image.png?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js')</script>
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -27,47 +28,121 @@
             box-sizing: border-box;
         }
 
+        /* ── TOKENS: flat ink, flat cream, gold kept for the full stops ── */
         :root {
-            /* DESIGN SYSTEM TOKENS */
-            --bg:               #050409;       /* ink-deep */
-            --card:             #F2EDE3;       /* paper */
-            --card-dark:        #0B0A12;       /* ink-soft */
-            --text-dark:        #1A140C;       /* ink-on-paper */
-            --text-light:       #F2EDE3;       /* paper */
-            --text-muted-dark:  rgba(26, 20, 12, 0.74);   /* ink-on-paper-dim */
-            --text-muted-light: rgba(242, 237, 227, 0.74);/* paper-dim */
-            --text-mute-dark:   rgba(26, 20, 12, 0.50);
-            --text-mute-light:  rgba(242, 237, 227, 0.55);
-            --border-dark:      rgba(20, 17, 12, 0.14);
-            --border-light:     rgba(242, 237, 227, 0.16);
-            --gold:             #C9A876;
-            --gold-deep:        #8C7551;
-            --sans:             'Inter', -apple-system, sans-serif;
-            --mono:             'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+            --ink:          #050409;
+            --ink-2:        #0B0A10;
+            --cream:        #F2EDE3;
+
+            --t-ink:        #F2EDE3;
+            --t-ink-body:   rgba(242, 237, 227, 0.86);
+            --t-ink-mute:   rgba(242, 237, 227, 0.66);
+            --t-cream:      #1A140C;
+            --t-cream-body: rgba(26, 20, 12, 0.88);
+            --t-cream-mute: rgba(26, 20, 12, 0.68);
+            --rule-ink:     rgba(242, 237, 227, 0.14);
+            --rule-cream:   rgba(26, 20, 12, 0.16);
+            --edge-ink:     rgba(242, 237, 227, 0.09);
+
+            --gold:         #C9A876;
+            --gold-cream:   #8C7551;
+
+            --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            --mono:  'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+
+            --gutter:   3rem;
+            --pad:      3rem;
+            --gap:      14px;
+            --space:    clamp(5.5rem, 9vw, 8.5rem);
+
+            --label:    0.75rem;
+            --label-c:  0.8125rem;
+            --track:    0.12em;
+
+            --fs-body:  1.0625rem;
+            --fs-lead:  1.125rem;
+            --fs-card:  1rem;
+            --lh:       1.6;
+
+            --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+            /* surface-aware values: ink by default, cream surfaces override */
+            --body:  var(--t-ink-body);
+            --mute:  var(--t-ink-mute);
+            --rule:  var(--rule-ink);
+            --dot:   var(--gold);
+            --focus: var(--gold);
+        }
+
+        .cream {
+            background-color: var(--cream);
+            color: var(--t-cream);
+            --body:  var(--t-cream-body);
+            --mute:  var(--t-cream-mute);
+            --rule:  var(--rule-cream);
+            --dot:   var(--gold-cream);
+            --focus: var(--t-cream);
         }
 
         html {
-            scroll-behavior: smooth;
             font-size: 16px;
+            font-synthesis: none;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(201, 168, 118, 0.2);
         }
 
         body {
-            background: var(--bg);
-            color: var(--text-light);
+            background: var(--ink);
+            color: var(--t-ink);
             font-family: var(--sans);
+            font-size: var(--fs-body);
             font-weight: 400;
-            line-height: 1.6;
+            line-height: var(--lh);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        ::selection {
-            background: var(--gold);
-            color: var(--bg);
+        img { display: block; max-width: 100%; }
+
+        ::selection { background: var(--gold); color: var(--ink); }
+
+        a:focus-visible {
+            outline: 2px solid var(--focus);
+            outline-offset: 4px;
+        }
+        a:focus:not(:focus-visible) { outline: none; }
+
+        .dot { color: var(--dot); }
+
+        .wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--gutter);
         }
 
-        /* ── GOLD DOT (signature punctuation) ── */
-        .dot { color: var(--gold); }
+        /* ── TYPE SYSTEM ── */
+        .label {
+            font-family: var(--mono);
+            font-size: var(--label);
+            font-weight: 500;
+            letter-spacing: var(--track);
+            line-height: 1.45;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .display {
+            font-family: var(--sans);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-feature-settings: "case" 1;
+            text-wrap: balance;
+        }
+
+        p, li { text-wrap: pretty; }
 
         /* ── NAV ── */
         nav {
@@ -79,11 +154,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 3rem;
-            background: rgba(5, 4, 9, 0.92);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border-light);
+            padding: 1rem max(3rem, calc(50% - 592px));
+            background: rgba(5, 4, 9, 0.94);
+            border-bottom: 1px solid rgba(242, 237, 227, 0.08);
         }
 
         .nav-logo {
@@ -93,983 +166,1532 @@
             font-family: var(--sans);
             font-weight: 900;
             font-size: 1.5rem;
+            line-height: 1;
             letter-spacing: -0.04em;
             text-transform: uppercase;
+            white-space: nowrap;
             color: var(--gold);
         }
 
+        .nav-logo:focus-visible { outline-offset: 6px; }
+
         .nav-contact {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 0 1.25rem 0 calc(1.25rem + 0.14em);
+            border: 1px solid rgba(242, 237, 227, 0.32);
             font-family: var(--mono);
-            font-size: 0.7rem;
+            font-size: var(--label);
             font-weight: 500;
-            letter-spacing: 0.32em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: var(--text-light);
+            white-space: nowrap;
+            color: var(--t-ink);
             text-decoration: none;
-            padding: 0.7rem 1.5rem;
-            border: 1px solid rgba(201, 168, 118, 0.55);
-            transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+            transition: background-color 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
         }
 
-        .nav-contact:hover {
-            background: var(--gold);
-            border-color: var(--gold);
-            color: var(--bg);
+        .nav-contact:hover,
+        .nav-contact:focus-visible {
+            background: var(--cream);
+            border-color: var(--cream);
+            color: var(--ink);
         }
 
-        /* ── LAYOUT ── */
-        .wrapper {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 3rem;
+        /* ── BUTTON: solid ink on cream, outline on hover ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 1.75rem;
+            background: var(--ink);
+            border: 1px solid var(--ink);
+            color: var(--cream);
+            font-family: var(--sans);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+            text-decoration: none;
+            transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
         }
 
-        .spacer { height: 10rem; }
-        .spacer-sm { height: 6rem; }
+        .btn:hover,
+        .btn:focus-visible {
+            background: transparent;
+            color: var(--ink);
+        }
 
         /* ── HERO ── */
-        .hero {
-            padding-top: calc(56px + 6rem);
-            padding-bottom: 4rem;
-        }
+        .hero { padding-top: calc(77px + 2.25rem); }
 
         .hero-card {
-            background: var(--bg);
-            color: var(--text-light);
-            overflow: hidden;
+            --split: 0.5833;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 520px;
-            border: 1px solid var(--border-light);
+            grid-template-columns: 7fr 5fr;
+            min-height: clamp(560px, calc(100vh - 77px - 8.5rem), 760px);
         }
 
         .hero-left {
-            padding: 3.5rem;
+            background: var(--ink-2);
+            border: 1px solid var(--edge-ink);
+            border-right: 0;
+            padding: 3rem var(--pad);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border-right: 1px solid var(--border-light);
-        }
-
-        .hero-label {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.42em;
-            text-transform: uppercase;
-            color: var(--text-mute-light);
+            gap: 2.25rem;
         }
 
         .hero-title {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 0.92;
+            font-size: clamp(2.75rem, calc(((min(100vw, 1280px) - 2 * var(--gutter)) * var(--split) - 2 * var(--pad)) / 6.3), 6rem);
+            line-height: 0.9;
             letter-spacing: -0.04em;
-            text-transform: uppercase;
-            margin: 1.5rem 0;
-            color: var(--text-light);
+            color: var(--t-ink);
+            white-space: nowrap;
         }
 
         .hero-title .gold { color: var(--gold); }
 
-        .hero-geo {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: 0.78rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-mute-light);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .hero-promise {
+            margin-top: 2rem;
+            max-width: 29em;
+            font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--t-ink);
         }
 
+        .hero-for {
+            margin-top: 0.875rem;
+            max-width: 32em;
+            font-size: var(--fs-body);
+            line-height: 1.55;
+            color: var(--t-ink-body);
+        }
+
+        .hero-geo,
+        .hero-meta {
+            padding-top: 1.125rem;
+            border-top: 1px solid var(--rule);
+            min-height: calc(1.125rem + 1.45em + 1px);
+        }
+
+        .hero-geo { color: rgba(242, 237, 227, 0.74); }
+
         .hero-right {
-            background: var(--card);
-            color: var(--text-dark);
-            padding: 3.5rem;
+            border-block: 1px solid transparent;
+            padding: 3rem var(--pad);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
-            overflow: hidden;
+            gap: 2.5rem;
         }
 
-        .hero-right::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, rgba(140, 117, 81, 0.12) 0%, rgba(140, 117, 81, 0.03) 30%, transparent 65%);
-            pointer-events: none;
+        /* top of the cream panel: who it is for, then the Asia-to-HQ line */
+        .hero-who .hero-for {
+            margin-top: 0;
+            max-width: 23em;
+            font-size: var(--fs-lead);
+            color: var(--t-cream-body);
         }
 
-        .hero-right > * { position: relative; z-index: 1; }
-
-        .hero-right .hero-label {
-            color: var(--text-mute-dark);
+        .hero-context {
+            max-width: 23em;
+            font-size: var(--fs-lead);
+            line-height: 1.55;
+            color: var(--t-cream);
         }
 
-        .hero-sub {
-            font-size: 0.92rem;
-            line-height: 1.65;
-            color: var(--text-muted-dark);
-            max-width: 380px;
-            margin-bottom: 2rem;
+        .hero-who .hero-context { margin-top: 0.875rem; }
+
+        @media (min-width: 901px) {
+            .hero-who { padding-top: 4rem; }
         }
+
+        /* bottom of the cream panel: the invitation, the button, the meta row */
+        .hero-act {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .hero-invite {
+            font-size: var(--fs-lead);
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--t-cream);
+        }
+
+        .hero-ask .btn { margin-top: 1.75rem; }
 
         .hero-meta {
             display: flex;
-            gap: 3rem;
+            flex-wrap: wrap;
+            gap: 0.4rem 2.25rem;
         }
 
-        .hero-meta-item {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--text-mute-dark);
-        }
+        .hero-meta span { white-space: nowrap; }
 
-        /* ── SECTION HEADER ── */
-        .section-header {
-            margin-bottom: 3rem;
-        }
-
-        .section-tag {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.42em;
-            text-transform: uppercase;
-            color: var(--text-mute-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .section-title {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: clamp(2.2rem, 4.5vw, 4rem);
-            line-height: 0.95;
-            letter-spacing: -0.04em;
-            text-transform: uppercase;
-            color: var(--text-light);
-        }
-
-        /* ── CARD SYSTEM ── */
-        .card {
-            background: var(--card);
-            color: var(--text-dark);
-            padding: 2.5rem;
-            border: 1px solid var(--border-light);
-        }
-
-        .card-dark {
-            background: var(--card-dark);
-            color: var(--text-light);
-            padding: 2.5rem;
-            border: 1px solid var(--border-light);
-        }
-
-        .card-label {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--gold-deep);
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border-dark);
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .card-dark .card-label {
-            color: var(--gold);
-            border-bottom-color: var(--border-light);
-        }
-
-        .card-title {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: clamp(1.8rem, 3.5vw, 3rem);
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-text {
-            font-size: 0.92rem;
-            line-height: 1.75;
-            color: var(--text-muted-dark);
-        }
-
-        .card-dark .card-text {
-            color: var(--text-muted-light);
-        }
-
-        /* GOLD-GLOW CARD — climax / verdict (dark slab + ambient gold halo) */
-        .card-gold {
-            background: var(--card-dark);
-            color: var(--text-light);
-            padding: 2.5rem;
-            border: 1px solid var(--gold);
-            box-shadow:
-                inset 0 0 80px rgba(201, 168, 118, 0.06),
-                0 0 0 1px rgba(201, 168, 118, 0.12),
-                0 12px 36px rgba(201, 168, 118, 0.10);
+        /* ── EDITORIAL BANDS: full width, flat edges ── */
+        .band {
             position: relative;
-        }
-        .card-gold .process-num { color: var(--gold); opacity: 1; }
-        .card-gold .process-desc { color: var(--text-muted-light); }
-
-        .card-text + .card-text {
-            margin-top: 1rem;
-        }
-
-        /* ── GRID LAYOUTS ── */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--border-light);
-            border: 1px solid var(--border-light);
-        }
-
-        .grid-2 > * { border: none; }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1px;
-            background: var(--border-light);
-            border: 1px solid var(--border-light);
-        }
-
-        .grid-3 > * { border: none; }
-
-        /* ── SERVICE LIST ── */
-        .service-list {
-            list-style: none;
-        }
-
-        .service-item {
-            display: grid;
-            grid-template-columns: 60px 1fr 40px;
-            align-items: center;
-            padding: 1.1rem 0;
-            border-bottom: 1px solid var(--border-dark);
-            font-size: 0.95rem;
-            transition: padding-left 0.2s;
-        }
-
-        .service-item:first-child {
-            border-top: 1px solid var(--border-dark);
-        }
-
-        .service-item:hover {
-            padding-left: 0.5rem;
-        }
-
-        .service-num {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-            color: var(--gold-deep);
-            text-transform: uppercase;
-        }
-
-        .service-name {
-            font-weight: 500;
-        }
-
-        .service-icon {
-            text-align: right;
-            font-family: var(--mono);
-            font-size: 0.95rem;
-            color: var(--gold);
-            opacity: 0.55;
-        }
-
-        .card-dark .service-item {
-            border-bottom-color: var(--border-light);
-        }
-
-        .card-dark .service-item:first-child {
-            border-top-color: var(--border-light);
-        }
-
-        .card-dark .service-num {
-            color: var(--gold);
-        }
-
-        /* ── PROCESS CARDS ── */
-        .process-num {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--gold-deep);
-            margin-bottom: 1.5rem;
-        }
-
-        .card-dark .process-num,
-        .card-outline .process-num {
-            color: var(--gold);
-        }
-
-        .process-name {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: 1.4rem;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
-        }
-
-        .process-desc {
-            font-size: 0.86rem;
-            line-height: 1.7;
-            color: var(--text-muted-dark);
-        }
-
-        .card-dark .process-desc { color: var(--text-muted-light); }
-
-        /* ── HOW I WORK ── */
-        .coaching-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--border-light);
-            border: 1px solid var(--border-light);
-        }
-        .coaching-grid > * { border: none; }
-
-        .coaching-card {
-            background: var(--card);
-            color: var(--text-dark);
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 220px;
-        }
-
-        .coaching-card.dark {
-            background: var(--card-dark);
-            color: var(--text-light);
-        }
-
-        .coaching-num {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.42em;
-            text-transform: uppercase;
-            color: var(--gold-deep);
-        }
-
-        .coaching-card.dark .coaching-num {
-            color: var(--gold);
-        }
-
-        .coaching-title {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.6rem;
-        }
-
-        .coaching-text {
-            font-size: 0.86rem;
-            line-height: 1.7;
-            color: var(--text-muted-dark);
-        }
-
-        .coaching-card.dark .coaching-text {
-            color: var(--text-muted-light);
-        }
-
-        /* ── ABOUT SECTION ── */
-        .about-card {
-            background: var(--card);
-            color: var(--text-dark);
             overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border: 1px solid var(--border-light);
+            background: var(--ink-2);
         }
 
-        .about-left {
-            padding: 3.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-right: 1px solid var(--border-dark);
-        }
-
-        .about-name {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: 2.2rem;
-            line-height: 1;
-            letter-spacing: -0.03em;
-            text-transform: uppercase;
-        }
-
-        .about-stat {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--text-mute-dark);
-        }
-
-        .about-right {
-            padding: 3.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .about-photo {
-            width: 200px;
-            height: 200px;
+        .band img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            display: block;
-            border-radius: 50%;
         }
 
-        /* ── CONTACT ── */
-        .contact-card {
-            background: var(--card);
-            color: var(--text-dark);
-            padding: 5rem 3rem;
-            text-align: center;
-            border: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
+        .band-tokyo {
+            margin-top: clamp(2.5rem, 4vw, 3.5rem);
+            height: clamp(300px, 31vw, 500px);
         }
 
-        .contact-card::after {
-            content: '';
-            position: absolute;
-            bottom: -150px;
-            right: -150px;
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, rgba(201, 168, 118, 0.18) 0%, transparent 65%);
-            pointer-events: none;
+        .band-tokyo img {
+            object-position: 50% 52%;
+            filter: saturate(0.6) brightness(0.92);
         }
 
-        .contact-card > * { position: relative; z-index: 1; }
+        /* ── CLIENT LOGOS ── */
+        .logos { padding-top: clamp(3.5rem, 6vw, 5rem); }
 
-        .contact-title {
-            font-family: var(--sans);
-            font-weight: 900;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            line-height: 0.95;
-            letter-spacing: -0.04em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-
-        .contact-text {
-            font-size: 0.92rem;
-            color: var(--text-muted-dark);
-            max-width: 440px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.75;
-        }
-
-        .contact-email {
-            display: inline-block;
-            font-family: var(--sans);
-            font-size: 0.92rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: none;
-            padding: 1.05rem 2.5rem;
-            background: var(--bg);
-            color: var(--gold);
-            text-decoration: none;
-            transition: background 0.15s ease, color 0.15s ease;
-            border: 1px solid var(--bg);
-        }
-
-        .contact-email:hover {
-            background: var(--gold);
-            color: var(--bg);
-            border-color: var(--gold);
-        }
-
-        .contact-note {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--text-mute-dark);
-            margin-top: 1.5rem;
-        }
-
-        /* ── FOOTER ── */
-        .footer {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border-light);
-            margin-top: 1rem;
-        }
-
-        .footer-brand {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--text-mute-light);
-        }
-
-        .footer-brand .dot { color: var(--gold); }
-
-        .footer-copy {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            letter-spacing: 0.22em;
-            color: var(--text-mute-light);
-        }
-
-        /* ── DIVIDER TEXT (method) ── */
-        .divider-text {
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        /* ── ANIMATIONS ── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ── CLIENT LOGOS (subtle, embedded in dark flow) ── */
-        .client-logos {
-            padding: 4rem 0;
-            margin-top: -4rem;
-        }
-
-        .client-logos-inner {
+        .logos-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 32px;
-            max-width: 1100px;
-            margin: 0 auto;
+            gap: 24px;
+            padding: 0 var(--pad);
         }
 
         .client-logo {
-            height: 32px;
             width: auto;
             max-width: 100%;
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
+            opacity: 0.86;
         }
-        .client-logo[alt="L'Oréal"] { height: 22px; }
-        .client-logo[alt="Marriott"] { height: 44px; }
-        .client-logo[alt="Unilever"] { height: 42px; }
-        .client-logo[alt="Dole"] { height: 38px; }
+        .client-logo[alt="L'Oréal"]  { height: 21px; }
+        .client-logo[alt="Marriott"] { height: 45px; }
+        .client-logo[alt="P&G"]      { height: 27px; }
+        .client-logo[alt="Unilever"] { height: 49px; }
+        .client-logo[alt="Disney"]   { height: 33px; }
+        .client-logo[alt="Dole"]     { height: 36px; }
 
-        @media (hover: hover) and (pointer: fine) {
-            .client-logo:hover { opacity: 1; }
-        }
-
-        @media (max-width: 1024px) {
-            .client-logos { padding: 3.25rem 0; }
-            .client-logos-inner { gap: 28px; }
-            .client-logo { height: 28px; }
-            .client-logo[alt="L'Oréal"] { height: 18px; }
-            .client-logo[alt="Marriott"] { height: 38px; }
-            .client-logo[alt="Unilever"] { height: 36px; }
-            .client-logo[alt="Dole"] { height: 32px; }
+        .logos-note {
+            margin-top: clamp(2.25rem, 3.5vw, 3rem);
+            text-align: center;
+            color: rgba(242, 237, 227, 0.76);
+            padding-left: var(--track);
+            text-wrap: balance;
         }
 
-        @media (max-width: 768px) {
-            .client-logos { padding: 2.75rem 0; }
-            .client-logos-inner {
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 24px 12px;
-                place-items: center;
+        /* ── SECTIONS ── */
+        .sec { padding-top: var(--space); }
+
+        .sec-head {
+            border-top: 1px solid var(--rule);
+            padding-top: 1.5rem;
+            margin-bottom: clamp(2.5rem, 4.5vw, 3.75rem);
+        }
+
+        .tag {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag .idx { color: var(--t-ink-body); }
+
+        .tag .idx::after {
+            content: '/';
+            color: rgba(242, 237, 227, 0.3);
+            margin: 0 0.7em 0 0.6em;
+        }
+
+        .sec-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 0.92;
+            letter-spacing: -0.04em;
+            color: var(--t-ink);
+        }
+
+        .sec-head.is-partner .sec-title {
+            font-size: clamp(3rem, 7.2vw, 6.5rem);
+            line-height: 0.88;
+        }
+
+        /* ── CARDS ── */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: var(--gap);
+        }
+
+        .card {
+            padding: var(--pad);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card.ink {
+            background: var(--ink-2);
+            border: 1px solid var(--edge-ink);
+        }
+
+        .card-label {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--rule);
+            margin-bottom: 2rem;
+        }
+
+        .card-label > span:last-child { margin-right: calc(var(--track) * -1); }
+
+        .card-title {
+            font-size: clamp(1.875rem, 2.8vw, 2.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.035em;
+            margin-bottom: 2rem;
+        }
+
+        /* the situations: a plain ruled list */
+        .sit-list { list-style: none; }
+
+        .sit-list li {
+            padding: 1.05rem 0;
+            border-bottom: 1px solid var(--rule);
+            font-size: var(--fs-body);
+            font-weight: 500;
+            line-height: 1.45;
+            color: var(--t-cream);
+        }
+
+        .sit-list li:first-child { border-top: 1px solid var(--rule); }
+
+        /* the terms: three forms spread down the card */
+        .terms-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .term-name {
+            font-size: var(--fs-body);
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--t-ink);
+            margin-bottom: 0.375rem;
+        }
+
+        .term-line {
+            font-size: var(--fs-card);
+            line-height: 1.6;
+            color: var(--body);
+        }
+
+        .terms-note {
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--rule);
+            font-size: var(--fs-card);
+            line-height: 1.6;
+            color: var(--body);
+        }
+
+        /* ── TESTIMONIAL BANDS: the image carries the subject, the quote sits in its shadow ── */
+        .quote-band {
+            position: relative;
+            overflow: hidden;
+            margin-top: var(--space);
+            min-height: clamp(540px, 46vw, 720px);
+            display: flex;
+            align-items: center;
+            background: var(--ink);
+        }
+
+        .quote-band > img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: var(--pos, 50% 50%);
+        }
+
+        .quote-band::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(5, 4, 9, 0.9) 0%, rgba(5, 4, 9, 0.84) 30%, rgba(5, 4, 9, 0.5) 50%, rgba(5, 4, 9, 0.12) 66%, rgba(5, 4, 9, 0) 78%);
+            pointer-events: none;
+        }
+
+        .qb-jacket { --pos: 60% 58%; --pos-m: 62% 55%; }
+        .qb-material { --pos: 58% 40%; --pos-m: 66% 40%; }
+        .sig-rules .sig-list li { grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); }
+        @media (max-width: 900px) { .sig-rules .sig-list li { grid-template-columns: 1fr; } }
+
+        /* testimonial 2: type alone on flat ink, no photo */
+        .qb-glass { min-height: 0; }
+        .qb-glass::after { display: none; }
+
+        .qb-inner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding-block: clamp(4rem, 7vw, 6rem);
+        }
+
+        .qb-fig { max-width: min(38rem, 52%); }
+
+        .qb-fig .label { margin-bottom: clamp(1.75rem, 3vw, 2.5rem); color: rgba(242, 237, 227, 0.72); }
+
+        .quote-text {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-style: normal;
+            font-size: clamp(1.875rem, 2.9vw, 2.75rem);
+            line-height: 1.18;
+            color: var(--t-ink);
+            font-variant-ligatures: no-common-ligatures;
+            text-indent: -0.5em;
+            text-wrap: pretty;
+        }
+
+        .quote-by {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: clamp(2rem, 3.5vw, 2.75rem);
+            color: rgba(242, 237, 227, 0.86);
+            text-wrap: balance;
+        }
+
+        .quote-by::before {
+            content: '';
+            width: 32px;
+            height: 1px;
+            flex: none;
+            background: rgba(242, 237, 227, 0.4);
+        }
+
+        /* ── SIGNATURE TEST: no card, a hairline between items ── */
+        .sig {
+            display: grid;
+            grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+            gap: clamp(2.5rem, 5vw, 5rem);
+            align-items: start;
+        }
+
+        .sig-intro {
+            max-width: 21em;
+            font-size: clamp(1.25rem, 1.75vw, 1.5rem);
+            font-weight: 500;
+            line-height: 1.42;
+            color: var(--t-ink);
+        }
+
+        .sig-list {
+            list-style: none;
+            border-top: 1px solid var(--rule);
+        }
+
+        .sig-list li {
+            display: grid;
+            grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr);
+            column-gap: 1.75rem;
+            row-gap: 0.4rem;
+            align-items: baseline;
+            padding: 1.4rem 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .sig-name {
+            font-size: 1.0625rem;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        .sig-text {
+            font-size: var(--fs-body);
+            line-height: 1.6;
+            color: var(--body);
+        }
+
+        /* ── CASES: plain columns, no frames, four labelled beats, rows aligned across ── */
+        .cases {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: clamp(2rem, 4vw, 3.5rem);
+        }
+
+        .case {
+            padding: 1.5rem 0 0;
+            border-top: 1px solid var(--rule);
+            display: grid;
+            grid-row: span 5;
+            grid-template-rows: subgrid;
+            row-gap: 0;
+        }
+
+        .case-num { margin-bottom: 1.25rem; }
+
+        .case-title {
+            font-size: clamp(1.625rem, 2.3vw, 2.125rem);
+            line-height: 0.98;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+        }
+
+        .beat {
+            padding: 1.1rem 0 1.2rem;
+            border-top: 1px solid var(--rule);
+        }
+
+        .beat .label {
+            display: block;
+            font-size: var(--label-c);
+            margin-bottom: 0.4rem;
+        }
+
+        .beat-text {
+            font-size: var(--fs-body);
+            line-height: 1.55;
+            color: var(--body);
+        }
+
+        .beat.is-after .beat-text {
+            font-weight: 600;
+            color: var(--t-ink);
+        }
+
+        /* a single case on the page: label and title left, the beats right, as in the Signature Test */
+        @media (min-width: 901px) {
+            .case:only-child {
+                grid-column: 1 / -1;
+                grid-row: auto;
+                grid-template-rows: none;
+                grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+                column-gap: clamp(2.5rem, 5vw, 5rem);
+                align-items: start;
             }
-            .client-logo {
-                height: 22px;
-                max-width: 100%;
-                width: auto;
-                min-width: 0;
-                object-fit: contain;
+
+            .case:only-child > .case-head { grid-column: 1; grid-row: 1 / span 4; }
+            .case:only-child > .beat { grid-column: 2; }
+
+            .case:only-child > .beat:first-of-type {
+                padding-top: 0;
+                border-top: 0;
             }
-            .client-logo[alt="L'Oréal"] { height: 15px; }
-            .client-logo[alt="Marriott"] { height: 30px; }
-            .client-logo[alt="Unilever"] { height: 28px; }
-            .client-logo[alt="Dole"] { height: 26px; }
+        }
+
+        /* ── PROTOCOL ── */
+        .protocol {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--gap);
+        }
+
+        .phase {
+            background: var(--ink-2);
+            border: 1px solid var(--edge-ink);
+            padding: 2.25rem 2.25rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .phase.cream {
+            background: var(--cream);
+            border-color: transparent;
+        }
+
+        .phase-num {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--rule);
+            margin-bottom: 1.5rem;
+        }
+
+        .phase-name {
+            font-size: 1.375rem;
+            line-height: 1.06;
+            letter-spacing: -0.025em;
+            min-height: 2.12em;
+            margin-bottom: 1rem;
+        }
+
+        .phase-line {
+            font-size: var(--fs-card);
+            line-height: 1.6;
+            color: var(--body);
+        }
+
+        .phase-out {
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        .phase-out p {
+            padding-top: 1rem;
+            border-top: 1px solid var(--rule);
+            font-size: var(--fs-card);
+            line-height: 1.6;
+            color: var(--t-ink);
+        }
+
+        .phase-out .label {
+            font-size: var(--label-c);
+            margin-right: 0.3em;
+        }
+
+        .phase.cream .phase-name { color: var(--t-cream); }
+        .phase.cream .phase-line { color: var(--t-cream); font-size: var(--fs-body); }
+
+        /* ── PRINCIPLES ── */
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: clamp(1.75rem, 3vw, 3rem);
+        }
+
+        @media (min-width: 901px) and (max-width: 1180px) {
+            .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        .principle {
+            display: grid;
+            grid-row: span 2;
+            grid-template-rows: subgrid;
+            row-gap: 0;
+            border-top: 1px solid var(--rule);
+            padding-top: 1.5rem;
+        }
+
+        .principle-name {
+            font-size: clamp(1.375rem, 1.9vw, 1.75rem);
+            line-height: 1.04;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .principle-line {
+            max-width: 22em;
+            font-size: var(--fs-body);
+            line-height: 1.6;
+            color: var(--body);
+        }
+
+        /* ── PARTNER ── */
+        .about {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        }
+
+        .about-left {
+            padding: 3.25rem var(--pad);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2.5rem;
+        }
+
+        .about-photo {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: 50% 30%;
+            filter: grayscale(1) sepia(0.1) contrast(1.03);
+        }
+
+        .about-stat {
+            margin-bottom: 2rem;
+            font-size: clamp(1.5rem, 2.7vw, 2.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.035em;
+        }
+
+        .about-right {
+            padding: 3.25rem var(--pad);
+            border-left: 1px solid var(--rule);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            max-width: 30em;
+            font-size: var(--fs-body);
+            line-height: 1.65;
+            color: var(--body);
+        }
+
+        .about-text + .about-text { margin-top: 1.1rem; }
+
+        .about-base {
+            margin-top: 2.25rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--rule);
+        }
+
+        .about-base .label { margin-bottom: 0.6rem; }
+
+        /* ── CONTACT ── */
+        #contact { scroll-margin-top: 6rem; }
+
+        .contact {
+            padding: clamp(4.5rem, 8vw, 7rem) var(--pad);
+            text-align: center;
+        }
+
+        .nw { white-space: nowrap; }
+
+        .contact-title {
+            font-size: clamp(2.5rem, 5.2vw, 4.5rem);
+            line-height: 0.92;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.75rem;
+        }
+
+        .contact-text {
+            max-width: 29em;
+            margin: 0 auto 2.5rem;
+            font-size: var(--fs-lead);
+            line-height: 1.6;
+            color: var(--body);
+        }
+
+        .contact .btn {
+            min-height: 60px;
+            padding: 0 2.5rem;
+            font-size: 1.0625rem;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: clamp(3.5rem, 6vw, 5rem);
+            padding: 1.75rem 0 calc(2.25rem + env(safe-area-inset-bottom));
+            border-top: 1px solid var(--rule);
+        }
+
+        .footer .label { text-wrap: balance; }
+
+        /* ── MOTION: fade and a 12px rise, only when motion is welcome ── */
+        @media (prefers-reduced-motion: no-preference) {
+            .js .reveal {
+                opacity: 0;
+                translate: 0 12px;
+                transition: opacity 0.9s var(--ease) var(--d, 0s), translate 0.9s var(--ease) var(--d, 0s);
+            }
+
+            .js .reveal.visible {
+                opacity: 1;
+                translate: none;
+            }
+
+            .js .hero-card.reveal,
+            .js .band.reveal { translate: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; }
         }
 
         /* ── RESPONSIVE ── */
+        @media (min-width: 901px) and (max-width: 1180px) {
+            .hero-geo,
+            .hero-meta { min-height: calc(1.125rem + 2.9em + 1px); }
+        }
+
+        @media (max-width: 1100px) {
+            .hero-card {
+                --split: 0.5;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .protocol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (min-width: 1025px) {
+            .sig-intro {
+                position: sticky;
+                top: 7.5rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .client-logo[alt="L'Oréal"]  { height: 18px; }
+            .client-logo[alt="Marriott"] { height: 40px; }
+            .client-logo[alt="P&G"]      { height: 24px; }
+            .client-logo[alt="Unilever"] { height: 43px; }
+            .client-logo[alt="Disney"]   { height: 29px; }
+            .client-logo[alt="Dole"]     { height: 32px; }
+
+            .sig { grid-template-columns: 1fr; gap: 2.25rem; }
+            .sig-intro { max-width: 30em; }
+        }
+
         @media (max-width: 900px) {
+            :root {
+                --gutter: 1.5rem;
+                --pad: 2.25rem;
+            }
+
             nav { padding: 1rem 1.5rem; }
-            .wrapper { padding: 0 1.5rem; }
-            .spacer { height: 6rem; }
-            .spacer-sm { height: 4rem; }
+
+            .hero { padding-top: calc(77px + 1.5rem); }
 
             .hero-card,
             .grid-2,
-            .grid-3,
-            .coaching-grid,
-            .about-card {
-                grid-template-columns: 1fr;
-            }
+            .cases,
+            .principles,
+            .about { grid-template-columns: minmax(0, 1fr); }
 
-            .hero-left,
-            .hero-right,
-            .about-left,
-            .about-right {
-                padding: 2.25rem;
-            }
+            .hero-card { min-height: 0; }
 
-            /* hero-left right-border becomes bottom-border in stacked mobile */
             .hero-left {
-                border-right: none;
-                border-bottom: 1px solid var(--border-light);
+                border-right: 1px solid var(--edge-ink);
+                border-bottom: 0;
             }
 
-            /* geo line: allow wrap on mobile + explicit top margin (space-between
-               doesn't visually separate when content stacks at natural height) */
-            .hero-geo {
-                white-space: normal;
-                overflow: visible;
-                text-overflow: clip;
-                line-height: 1.55;
-                margin-top: 1.75rem;
+            .hero-title { font-size: clamp(2.75rem, 9vw, 4.5rem); }
+
+            .hero-geo,
+            .hero-meta { min-height: 0; }
+
+            .hero-right,
+            .hero-act { gap: 2rem; }
+
+            .grid-2 { gap: 10px; }
+
+            .case + .case { margin-top: 3rem; }
+
+            .principle { grid-row: auto; grid-template-rows: none; }
+            .principle + .principle { margin-top: 2.5rem; }
+
+            .about-right {
+                border-left: 0;
+                border-top: 1px solid var(--rule);
             }
 
-            .hero-left > .hero-label:last-child {
-                margin-top: 1.75rem;
-            }
+            .about-photo { max-width: 300px; }
 
-            .hero-meta {
-                flex-direction: column;
-                gap: 0.6rem;
-                margin-top: 1.75rem;
-            }
-
-            .hero-meta-item {
-                white-space: nowrap;
-            }
-
-            .about-left {
-                border-right: none;
-                border-bottom: 1px solid var(--border-dark);
-            }
-
-            /* footer: stack vertically, drop side-by-side flex */
             .footer {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 0.75rem;
             }
-            .footer-brand {
-                letter-spacing: 0.16em;
-                line-height: 1.5;
+        }
+
+        /* testimonial bands on phones: the image above, the quote on flat ink */
+        @media (max-width: 760px) {
+            .quote-band {
+                display: block;
+                min-height: 0;
+            }
+
+            .quote-band > img {
+                position: relative;
+                height: auto;
+                aspect-ratio: 4 / 3;
+                object-position: var(--pos-m, 80% 50%);
+            }
+
+            .quote-band::after { display: none; }
+
+            .qb-inner { padding-block: 2.5rem 0; }
+
+            .qb-fig { max-width: none; }
+
+            .band-tokyo {
+                height: auto;
+                aspect-ratio: 4 / 3;
+            }
+
+            .band-tokyo img { object-position: 70% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .logos { padding-top: 3rem; }
+            .logos-row {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 30px 16px;
+                place-items: center;
+                padding: 0;
+            }
+            .client-logo {
+                min-width: 0;
+                object-fit: contain;
+            }
+            .client-logo[alt="L'Oréal"]  { height: 15px; }
+            .client-logo[alt="Marriott"] { height: 35px; }
+            .client-logo[alt="P&G"]      { height: 21px; }
+            .client-logo[alt="Unilever"] { height: 38px; }
+            .client-logo[alt="Disney"]   { height: 27px; }
+            .client-logo[alt="Dole"]     { height: 30px; }
+        }
+
+        @media (max-width: 640px) {
+            .protocol { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+            .phase-name { min-height: 0; }
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --gutter: 1.25rem;
+                --pad: 1.75rem;
+                --space: 4.75rem;
+                --fs-body: 1.0625rem;
+            }
+
+            nav { padding: 0.875rem 1.25rem; }
+
+            .hero { padding-top: calc(72px + 0.75rem); }
+
+            .hero-left,
+            .hero-right { padding: 1.75rem var(--pad); }
+
+            .hero-left { gap: 1rem; }
+
+            /* the footer repeats the cities; the hero keeps the line and the button higher */
+            .hero-geo { display: none; }
+
+            .hero-promise {
+                margin-top: 1.25rem;
+                font-size: 1.0625rem;
+            }
+
+            .hero-who .hero-for,
+            .hero-context,
+            .hero-invite { font-size: 1.0625rem; }
+
+            .hero-ask .btn {
+                display: flex;
+                margin-top: 1rem;
+            }
+
+            .hero-right { gap: 1.25rem; }
+            .hero-act { gap: 1.75rem; }
+
+            .hero-meta { gap: 0.4rem 1.75rem; }
+
+            .card,
+            .about-left,
+            .about-right { padding: 2.25rem var(--pad); }
+
+            .phase { padding: 2rem var(--pad) 2.25rem; }
+
+            .sec-head { padding-top: 1.25rem; }
+
+            .tag { margin-bottom: 1.25rem; }
+
+            /* display heads sized to keep their composed lines down to 320 */
+            .sec-title { font-size: min(2.5rem, calc((100vw - 40px) / 9.3)); }
+            .sec-head.is-partner .sec-title { font-size: min(3.5rem, calc(15.6vw - 8px)); }
+            .card-title { font-size: min(1.875rem, calc((100vw - 2 * var(--gutter) - 2 * var(--pad) - 2px) / 8.9)); }
+            .case-title { font-size: min(1.625rem, calc((100vw - 2 * var(--gutter) - 2 * var(--pad)) / 10.1)); }
+            .about-stat { font-size: min(1.875rem, calc((100vw - 2 * var(--gutter) - 2 * var(--pad)) / 11.2)); }
+            .contact-title { font-size: min(2.25rem, calc((100vw - 2 * var(--gutter) - 2 * var(--pad)) / 10)); }
+            .contact-title br { display: none; }
+
+            .phase-name,
+            .principle-name { font-size: 1.375rem; }
+
+            .sig-list li {
+                grid-template-columns: minmax(0, 1fr);
+                padding: 1.25rem 0;
+            }
+
+            .quote-text {
+                font-size: clamp(1.75rem, 7.4vw, 2rem);
+                text-indent: 0;
+            }
+
+            .logos-note,
+            .footer .label { letter-spacing: 0.1em; }
+
+            .contact { padding: 3.75rem var(--pad); }
+
+            .contact .btn {
+                display: flex;
+                padding: 0 1rem;
+                font-size: 1rem;
             }
         }
-    </style>
+
+        @media (max-width: 400px) {
+            .nav-logo { font-size: 1.25rem; }
+            .nav-contact { padding: 0 1rem 0 calc(1rem + 0.14em); }
+            .hero-title { font-size: min(3rem, calc((100vw - 2 * var(--gutter) - 2 * var(--pad) - 2px) / 6.3)); }
+        }
+    
+        /* ── LINE BREAKS: balanced headings, no orphans in text ── */
+        h1, h2, h3, h4, .sig-intro, .hero-promise, .hero-context, .case-title { text-wrap: balance; }
+        p, li, figcaption, blockquote p, .beat-text, .term-line { text-wrap: pretty; }
+        @media (max-width: 600px) {
+            .contact-title { font-size: min(2rem, calc((100vw - 2 * var(--gutter) - 2 * var(--pad)) / 9.4)); }
+            .contact-title br { display: inline; }
+        }
+
+        /* ── HERO HOOK (Sofian's 4 lines, restored) ── */
+        .hero-hook p {
+            font-size: clamp(1rem, 1.15vw, 1.0625rem);
+            line-height: 1.62;
+            color: #1A140C;
+            max-width: 27em;
+            text-wrap: pretty;
+        }
+        .hero-hook p + p { margin-top: 1rem; }
+        .hero-hook .hook-last { font-weight: 600; }
+        .hero-act { display: flex; flex-direction: column; align-items: flex-start; gap: 1.75rem; }
+
+        /* ── TESTIMONIALS: one phrase per line on desktop, natural flow on small screens ── */
+        .quote-text .ql { display: block; }
+        @media (min-width: 901px) { .qb-fig { max-width: min(42rem, 58%); } }
+        @media (max-width: 900px) { .qb-fig { max-width: none; } }
+        .hero-hook .hl { display: block; }
+
+        /* ── THE AUDIENCE BAND: logos set on the room they come from ── */
+        .band-audience {
+            margin-top: clamp(2.5rem, 4vw, 3.5rem);
+            height: clamp(440px, 44vw, 700px);
+        }
+        .band-audience img { object-position: 50% 30%; filter: saturate(0.85); }
+        .band-logos {
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            padding: clamp(1.4rem, 2.2vw, 2rem) var(--pad) clamp(1rem, 1.6vw, 1.4rem);
+            background: linear-gradient(to bottom, rgba(5, 4, 9, 0.55) 0%, rgba(5, 4, 9, 0.78) 45%, rgba(5, 4, 9, 0.86) 100%);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            border-top: 1px solid rgba(242, 237, 227, 0.1);
+        }
+        .band-logos .logos-row { max-width: 1184px; margin: 0 auto; padding: 0; }
+        .band-logos .client-logo { opacity: 0.92; width: auto; object-fit: contain; }
+        .band-logos .logos-note { margin-top: clamp(0.9rem, 1.4vw, 1.25rem); }
+        @media (max-width: 900px) {
+            .band-audience { height: auto; aspect-ratio: 3 / 4; }
+            .band-audience img { object-position: 50% 25%; }
+        }
+
+        /* ball sits mid-frame: on desktop slide the plate right so the quote keeps its dark side */
+        @media (min-width: 901px) {
+            .qb-material > img {
+                left: 27%;
+                width: 73%;
+                -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+                mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+            }
+            .qb-jacket > img {
+                left: 22%;
+                width: 78%;
+                -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%);
+                mask-image: linear-gradient(to right, transparent 0%, #000 22%);
+            }
+        }
+
+        /* ── RULE EXAMPLES: the line as said, the line as remembered ── */
+        .sig-ex {
+            grid-column: 2;
+            margin-top: 0.6rem;
+            font-family: var(--serif);
+            font-size: 1.125rem;
+            line-height: 1.4;
+            color: var(--t-ink);
+        }
+        .sig-ex .ql { display: block; }
+        .sig-ex .ql + .ql { color: rgba(242, 237, 227, 0.62); font-family: var(--sans); font-size: 0.9375rem; margin-top: 0.2rem; }
+        @media (max-width: 900px) { .sig-ex { grid-column: 1; } }
+
+        /* ── TESTIMONIALS: type alone on flat ink ── */
+        .qb-plain { min-height: 0; }
+        .qb-plain::after { display: none; }
+        .qb-plain .qb-inner { padding-block: clamp(4.5rem, 8vw, 7rem); }
+
+        /* ── 04 SIGNATURE TEST, LAYOUT B: the verdict sentence opens, six numbered rules follow ── */
+        .rules-B .sec-head { margin-bottom: clamp(1.75rem, 2.6vw, 2.25rem); }
+
+        .rules-B .sec-title {
+            font-size: clamp(1.375rem, 1.9vw, 1.75rem);
+            line-height: 1.05;
+            letter-spacing: -0.025em;
+        }
+
+        .rules-B .rb-verdict {
+            font-family: var(--sans);
+            font-weight: 900;
+            font-size: clamp(2.25rem, 3.9vw, 3.5rem);
+            line-height: 1.04;
+            letter-spacing: -0.035em;
+            color: var(--t-ink);
+            text-wrap: balance;
+            margin-bottom: clamp(3.5rem, 6.5vw, 6rem);
+        }
+
+        .rules-B .rb-vl { display: block; }
+
+        .rules-B .rb-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: clamp(2.5rem, 5vw, 5rem);
+        }
+
+        .rules-B .rb-rule {
+            display: grid;
+            grid-template-columns: 3.25rem minmax(0, 1fr);
+            grid-row: span 3;
+            grid-template-rows: subgrid;
+            row-gap: 0;
+            border-top: 1px solid var(--rule);
+            padding: 1.75rem 0 2.75rem;
+        }
+
+        .rules-B .rb-num {
+            grid-column: 1;
+            grid-row: 1;
+            align-self: baseline;
+            font-family: var(--mono);
+            font-size: var(--label);
+            font-weight: 500;
+            letter-spacing: var(--track);
+            color: var(--mute);
+        }
+
+        .rules-B .rb-name {
+            grid-column: 2;
+            grid-row: 1;
+            align-self: baseline;
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: clamp(1.25rem, 1.65vw, 1.5rem);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--t-ink);
+        }
+
+        .rules-B .rb-line {
+            grid-column: 2;
+            grid-row: 2;
+            margin-top: 0.75rem;
+            font-size: var(--fs-body);
+            line-height: 1.6;
+            color: var(--body);
+        }
+
+        .rules-B .ph { display: block; }
+
+        .rules-B .rb-ex {
+            grid-column: 2;
+            grid-row: 3;
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: 10.25rem minmax(0, 1fr);
+            column-gap: 1rem;
+            row-gap: 0.4rem;
+            align-items: baseline;
+        }
+
+        .rules-B .rb-ex dt {
+            font-family: var(--mono);
+            font-size: 0.6875rem;
+            font-weight: 500;
+            letter-spacing: var(--track);
+            line-height: 1.4;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rules-B .rb-ex dd {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-style: normal;
+            font-size: 1.375rem;
+            line-height: 1.3;
+            color: var(--t-ink);
+        }
+
+        .rules-B .rb-key {
+            text-decoration-line: underline;
+            text-decoration-color: var(--gold);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.2em;
+        }
+
+        /* two narrow columns: the label sits above its line */
+        @media (min-width: 901px) and (max-width: 1180px) {
+            .rules-B .rb-ex { grid-template-columns: minmax(0, 1fr); row-gap: 0.2rem; }
+            .rules-B .rb-ex dd + dt { margin-top: 0.75rem; }
+        }
+
+        @media (max-width: 900px) {
+            .rules-B .rb-list { grid-template-columns: minmax(0, 1fr); }
+            .rules-B .rb-rule { grid-row: auto; grid-template-rows: none; }
+        }
+
+        @media (max-width: 600px) {
+            .rules-B .sec-title { font-size: min(1.5rem, calc((100vw - 40px) / 14.5)); }
+
+            .rules-B .rb-verdict {
+                font-size: min(2.5rem, calc((100vw - 40px) / 8.6));
+                line-height: 1.06;
+                margin-bottom: 3rem;
+            }
+
+            .rules-B .rb-rule {
+                grid-template-columns: 2.25rem minmax(0, 1fr);
+                padding: 1.5rem 0 2rem;
+            }
+
+            .rules-B .rb-name { font-size: 1.3125rem; }
+
+            .rules-B .rb-line { margin-top: 0.6rem; }
+
+            .rules-B .rb-ex {
+                grid-template-columns: minmax(0, 1fr);
+                margin-top: 1.25rem;
+                row-gap: 0.2rem;
+            }
+
+            .rules-B .rb-ex dd + dt { margin-top: 0.75rem; }
+        }
+
+        /* ── TESTIMONIALS CENTRED (no image): one phrase per centred line ── */
+        .qb-plain .qb-fig { margin-inline: auto; max-width: 46rem; text-align: center; }
+        .qb-plain .quote-text { text-indent: 0; }
+        .qb-plain .quote-by { flex-direction: column; justify-content: center; gap: 0.3rem; text-align: center; }
+        .qb-plain .quote-by::before { margin-bottom: 0.9rem; }
+
+        @media (max-width: 600px) {
+            .qb-plain .quote-text { font-size: clamp(1.375rem, 6.1vw, 1.875rem); line-height: 1.22; }
+        }
+
+        /* ── TESTIMONIALS: one sentence per centred line, tighter band ── */
+        .qb-plain { margin-top: clamp(3rem, 5vw, 4.25rem); }
+        .qb-plain .qb-inner { padding-block: clamp(2.25rem, 4vw, 3.25rem); }
+        .qb-plain .qb-fig { max-width: min(64rem, 100%); }
+        .qb-plain .quote-text { font-size: clamp(1.75rem, 2.55vw, 2.375rem); line-height: 1.24; }
+        .qb-plain .qb-fig .label { margin-bottom: clamp(1.25rem, 2vw, 1.75rem); }
+        .qb-plain .quote-by { margin-top: clamp(1.5rem, 2.5vw, 2rem); }
+
+        .quote-text .qs { display: inline; }
+        @media (max-width: 600px) { .quote-text .qs { display: block; } }
+</style>
 </head>
 <body>
 
     <!-- NAV -->
-    <nav>
+    <nav aria-label="Primary">
         <a href="#" class="nav-logo">Carte Blanche</a>
         <a href="#contact" class="nav-contact">Contact</a>
     </nav>
 
-    <div class="wrapper">
+    <main>
 
-        <!-- ━━━ HERO ━━━ -->
-        <section class="hero">
+        <!-- HERO -->
+        <section class="hero wrap">
             <div class="hero-card reveal">
                 <div class="hero-left">
-                    <div class="hero-label">Private Pitch Advisory</div>
+                    <p class="label">Private Pitch Advisory</p>
                     <div>
-                        <h1 class="hero-title">Sharpness<span class="dot">.</span><br>Density<span class="dot">.</span><br><span class="gold">Precision.</span></h1>
-                        <p style="font-family:var(--sans);font-size:0.92rem;font-weight:400;letter-spacing:0;color:var(--text-muted-light);margin-top:1.6rem;max-width:380px;line-height:1.65;">For Country GMs, Regional Leaders &amp; Brand Presidents in Luxury and Consumer.</p>
+                        <h1 class="hero-title display"><span class="nw">Sharpness<span class="dot">.</span></span><br><span class="nw">Density<span class="dot">.</span></span><br><span class="gold">Precision.</span></h1>
+                        <p class="hero-promise">For&nbsp;Country GMs, Regional Leaders &amp; Brand Presidents in&nbsp;Luxury and&nbsp;Consumer.</p>
                     </div>
-                    <div class="hero-geo">Paris &middot; Singapore &middot; Shanghai &middot; Hong Kong &middot; Seoul &middot; Tokyo</div>
+                    <p class="hero-geo label">Tokyo&nbsp;&middot; Seoul&nbsp;&middot; Shanghai&nbsp;&middot; Hong&nbsp;Kong&nbsp;&middot; Singapore&nbsp;&middot; Paris</p>
                 </div>
-                <div class="hero-right">
-                    <div class="hero-label" style="visibility:hidden;">&#8203;</div>
-                    <div>
-                        <p class="hero-sub" style="margin-bottom:1.2rem;">Excom, Group Mancom, Senior Leadership. Impatient, hard to impress, looking for a reason to say no.</p>
-                        <p class="hero-sub" style="margin-bottom:1.2rem;">One angle that doesn't hold. Ambiguity becomes the pretext to defer or decline.</p>
-                        <p class="hero-sub" style="margin-bottom:1.2rem;">Build your signature pitch. Lock in the style that wins for you. Own the outcome.</p>
-                        <p class="hero-sub" style="margin-bottom:0;">A method that survives the moment. Repeatable. Yours.</p>
+                <div class="hero-right cream">
+                    <div class="hero-hook">
+                        <p><span class="hl">Excom, Group Mancom, Senior&nbsp;Leadership. </span><span class="hl">Impatient, hard to&nbsp;impress, </span><span class="hl"><span class="nw">looking for&nbsp;a&nbsp;reason</span> to&nbsp;say&nbsp;no.</span></p>
+                        <p>One angle that doesn&rsquo;t&nbsp;hold. Ambiguity becomes the&nbsp;pretext to&nbsp;defer or&nbsp;decline.</p>
+                        <p>Build your signature pitch. One angle, one order, every line tested against your&nbsp;audience.</p>
+                        <p class="hook-last">A&nbsp;frame you carry into your next address. Repeatable. Yours.</p>
                     </div>
-                    <div class="hero-meta">
-                        <div class="hero-meta-item">Est. 2016</div>
-                        <div class="hero-meta-item">8 to 10 engagements / year</div>
+                    <div class="hero-act">
+                        <a href="mailto:sofian@hack40.com?subject=Date%20and%20audience" class="btn">Send your presentation&nbsp;date</a>
+                        <p class="hero-meta label"><span>Est. 2016</span><span>8&nbsp;to&nbsp;10&nbsp;clients a&nbsp;year</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ━━━ CLIENT LOGOS ━━━ -->
-        <section class="client-logos" aria-label="Client engagements">
-            <div class="client-logos-inner">
-                <img src="logos/loreal.png" alt="L'Oréal" class="client-logo">
-                <img src="logos/marriott.png" alt="Marriott" class="client-logo">
-                <img src="logos/pg.png" alt="P&amp;G" class="client-logo">
-                <img src="logos/unilever.png" alt="Unilever" class="client-logo">
-                <img src="logos/disney.png" alt="Disney" class="client-logo">
-                <img src="logos/dole.png" alt="Dole" class="client-logo">
+        <!-- THE AUDIENCE: the room, and the groups it comes from -->
+        <section class="band band-audience reveal" aria-label="Client engagements">
+            <img src="finish/editorial-audience.jpg" alt="" width="2000" height="1125">
+            <div class="band-logos">
+                <div class="logos-row">
+                <img src="logos/loreal.png" alt="L'Oréal" class="client-logo" width="1280" height="232">
+                <img src="logos/marriott.png" alt="Marriott" class="client-logo" width="2736" height="2149">
+                <img src="logos/pg.png" alt="P&amp;G" class="client-logo" width="1251" height="544">
+                <img src="logos/unilever.png" alt="Unilever" class="client-logo" width="2160" height="2388">
+                <img src="logos/disney.png" alt="Disney" class="client-logo" width="3968" height="1686">
+                <img src="logos/dole.png" alt="Dole" class="client-logo" width="2918" height="1957">
+            </div>
+                <p class="logos-note label">Engagements held in&nbsp;strict confidence</p>
             </div>
         </section>
 
-        <!-- ━━━ THE SITUATIONS ━━━ -->
-        <section>
-            <div class="section-header reveal">
-                <div class="section-tag">The Practice</div>
-                <h2 class="section-title">Where mandates<br>are decided<span class="dot">.</span></h2>
-            </div>
-            <div class="grid-2 reveal">
-                <div class="card">
-                    <div class="card-label"><span>Service</span><span>Situations</span></div>
-                    <div class="card-title">The<br>Situations</div>
-                    <ul class="service-list" style="margin-top:2rem;">
-                        <li class="service-item"><span class="service-num">N&deg;01</span><span class="service-name">First address after a promotion or new role</span><span class="service-icon">+</span></li>
-                        <li class="service-item"><span class="service-num">N&deg;02</span><span class="service-name">Annual business review with Group leadership</span><span class="service-icon">+</span></li>
-                        <li class="service-item"><span class="service-num">N&deg;03</span><span class="service-name">Internal conventions and town halls</span><span class="service-icon">+</span></li>
-                        <li class="service-item"><span class="service-num">N&deg;04</span><span class="service-name">Launch of a regional HQ, BU, or innovation center</span><span class="service-icon">+</span></li>
-                        <li class="service-item"><span class="service-num">N&deg;05</span><span class="service-name">Press and brand spokesperson moments</span><span class="service-icon">+</span></li>
+        <!-- 01 THE PRACTICE -->
+        <section class="sec wrap">
+            <header class="sec-head reveal">
+                <p class="tag label"><span class="idx" aria-hidden="true">01</span>The&nbsp;Practice</p>
+                <h2 class="sec-title display">Where&nbsp;mandates<br>are at&nbsp;<span class="nw">stake<span class="dot">.</span></span></h2>
+            </header>
+            <div class="grid-2">
+                <article class="card cream reveal">
+                    <p class="card-label label"><span>Service</span><span>Situations</span></p>
+                    <h3 class="card-title display">The <span class="nw">Situations<span class="dot">.</span></span></h3>
+                    <ul class="sit-list">
+                        <li>First address in&nbsp;a&nbsp;new role</li>
+                        <li>Group&nbsp;CEO visits, built around the&nbsp;one&nbsp;decision you need</li>
+                        <li>Annual review with&nbsp;Group&nbsp;leadership</li>
+                        <li>Leadership meeting before budgets are set</li>
+                        <li>Conventions and&nbsp;town halls, from&nbsp;the&nbsp;opening film to&nbsp;the&nbsp;live&nbsp;address</li>
+                        <li>Launch of&nbsp;a&nbsp;regional HQ, BU, or&nbsp;innovation center</li>
+                        <li>Press and&nbsp;brand spokesperson moments</li>
                     </ul>
-                </div>
-                <div class="card-dark">
-                    <div class="card-label"><span>Engagement</span><span>Terms</span></div>
-                    <div style="margin-bottom:2rem;">
-                        <p class="card-title" style="color:var(--text-light);">One discipline<span class="dot">.</span><br>Three forms<span class="dot">.</span></p>
-                        <div style="display:flex;flex-direction:column;gap:1.5rem;">
-                            <div>
-                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;"><span style="color:var(--gold);">+</span> Single-pitch intensive</p>
-                                <p class="card-text" style="margin:0;">One pitch, prepared end to end. Three to five weeks.</p>
-                            </div>
-                            <div>
-                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;"><span style="color:var(--gold);">+</span> Yearly retainer</p>
-                                <p class="card-text" style="margin:0;">For when the stakes return.</p>
-                            </div>
-                            <div>
-                                <p style="font-weight:700;font-size:0.95rem;color:var(--text-light);margin-bottom:0.4rem;"><span style="color:var(--gold);">+</span> Last-minute intensive</p>
-                                <p class="card-text" style="margin:0;">48 to 72 hours before the moment.</p>
-                            </div>
+                </article>
+                <article class="card ink reveal">
+                    <p class="card-label label"><span>Engagement</span><span>Terms</span></p>
+                    <h3 class="card-title display">3&nbsp;<span class="nw">forms<span class="dot">.</span></span><br>Same <span class="nw">discipline<span class="dot">.</span></span></h3>
+                    <div class="terms-list">
+                        <div>
+                            <h4 class="term-name">Single-pitch intensive</h4>
+                            <p class="term-line">Slide-by-slide messages ready for&nbsp;your&nbsp;team or&nbsp;agency, then&nbsp;a&nbsp;full rehearsal. 4&nbsp;to&nbsp;8&nbsp;sessions over 1&nbsp;to&nbsp;3&nbsp;months.</p>
+                        </div>
+                        <div>
+                            <h4 class="term-name">Yearly retainer</h4>
+                            <p class="term-line">The&nbsp;Group visits, reviews, and&nbsp;conventions across your&nbsp;year, each&nbsp;built on&nbsp;the&nbsp;last. Sessions booked as&nbsp;each&nbsp;date is&nbsp;set.</p>
+                        </div>
+                        <div>
+                            <h4 class="term-name">Last-minute intensive</h4>
+                            <p class="term-line">Starting 48&nbsp;to&nbsp;72&nbsp;hours before you present: a&nbsp;read of&nbsp;your&nbsp;draft, the&nbsp;hard questions, then&nbsp;a&nbsp;timed run.</p>
                         </div>
                     </div>
+                    <p class="terms-note">On&nbsp;request: your&nbsp;team&rsquo;s presenters, as&nbsp;a&nbsp;group, then&nbsp;one&nbsp;to&nbsp;one.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL 1 -->
+        <section class="quote-band qb-plain" aria-label="Testimonial">
+            <div class="qb-inner wrap">
+                <figure class="qb-fig reveal">
+                    <p class="label">Testimonial</p>
+                    <blockquote class="quote-text"><p><span class="ql"><span class="qs">&laquo;&nbsp;Substance, form, confidence.</span> </span><span class="ql"><span class="qs">Sofian brought clarity to&nbsp;the&nbsp;frame </span><span class="qs">and&nbsp;discipline to&nbsp;the&nbsp;words.</span> </span><span class="ql"><span class="qs">The markets responded </span><span class="qs">on&nbsp;a&nbsp;different level entirely.&nbsp;&raquo;</span></span></p></blockquote>
+                    <figcaption class="quote-by label">Brand President, <span class="nw">luxury beauty, Asia</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 02 THE PROTOCOL -->
+        <section class="sec wrap">
+            <header class="sec-head reveal">
+                <p class="tag label"><span class="idx" aria-hidden="true">02</span>The&nbsp;Protocol</p>
+                <h2 class="sec-title display">5&nbsp;<span class="nw">phases<span class="dot">.</span></span><br>End to&nbsp;<span class="nw">end<span class="dot">.</span></span></h2>
+            </header>
+            <div class="protocol">
+                <article class="phase reveal">
+                    <p class="phase-num label">Phase N&deg;01</p>
+                    <h3 class="phase-name display">Strategic <span class="nw">Reframing<span class="dot">.</span></span></h3>
+                    <p class="phase-line">We map who is&nbsp;in&nbsp;the&nbsp;room, what&nbsp;each person needs, and&nbsp;the&nbsp;one&nbsp;decision you want.</p>
+                    <div class="phase-out"><p><span class="label">Output</span> the&nbsp;angle, and&nbsp;for&nbsp;a&nbsp;review, the&nbsp;one&nbsp;decision to&nbsp;obtain.</p></div>
+                </article>
+                <article class="phase reveal">
+                    <p class="phase-num label">Phase N&deg;02</p>
+                    <h3 class="phase-name display">Narrative <span class="nw">Architecture<span class="dot">.</span></span></h3>
+                    <p class="phase-line">We try 2&nbsp;or&nbsp;3&nbsp;storylines and&nbsp;keep the&nbsp;one your audience will follow.</p>
+                    <div class="phase-out"><p><span class="label">Output</span> the&nbsp;opening, the&nbsp;key idea, the&nbsp;close, then&nbsp;the&nbsp;message of&nbsp;each&nbsp;slide.</p></div>
+                </article>
+                <article class="phase reveal">
+                    <p class="phase-num label">Phase N&deg;03</p>
+                    <h3 class="phase-name display">Argument <span class="nw">Sequencing<span class="dot">.</span></span></h3>
+                    <p class="phase-line">We put each&nbsp;proof just before the&nbsp;question it&nbsp;answers.</p>
+                    <div class="phase-out"><p><span class="label">Output</span> the&nbsp;order of&nbsp;your proofs, every figure checked.</p></div>
+                </article>
+                <article class="phase reveal">
+                    <p class="phase-num label">Phase N&deg;04</p>
+                    <h3 class="phase-name display">Pressure <span class="nw">Test<span class="dot">.</span></span></h3>
+                    <p class="phase-line">I&nbsp;ask the&nbsp;hardest questions your audience could&nbsp;ask.</p>
+                    <div class="phase-out"><p><span class="label">Output</span> your answers, ready.</p></div>
+                </article>
+                <article class="phase reveal">
+                    <p class="phase-num label">Phase N&deg;05</p>
+                    <h3 class="phase-name display">Full <span class="nw">Simulation<span class="dot">.</span></span></h3>
+                    <p class="phase-line">A&nbsp;full rehearsal, timed, in&nbsp;real conditions.</p>
+                    <div class="phase-out"><p><span class="label">Output</span> notes on&nbsp;voice, pace and&nbsp;pauses. For&nbsp;a&nbsp;live&nbsp;address, notes on&nbsp;your own&nbsp;recording.</p></div>
+                </article>
+                <article class="phase cream reveal">
+                    <p class="phase-num label">The&nbsp;result</p>
+                    <h3 class="phase-name display">You walk in&nbsp;sharp.</h3>
+                    <p class="phase-line">Fewer points, each&nbsp;one&nbsp;supported.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL 2 -->
+        <section class="quote-band qb-plain" aria-label="Testimonial">
+            <div class="qb-inner wrap">
+                <figure class="qb-fig reveal">
+                    <p class="label">Testimonial</p>
+                    <blockquote class="quote-text"><p><span class="ql"><span class="qs">&laquo;&nbsp;I arrived prepared </span><span class="qs">for&nbsp;every eventuality.</span> </span><span class="ql"><span class="qs">The flow was pragmatic, </span><span class="qs">the&nbsp;demonstration logical,</span> </span><span class="ql"><span class="qs">and&nbsp;it&nbsp;always let me </span><span class="qs">take back the&nbsp;lead,</span> </span><span class="ql"><span class="qs">even when the&nbsp;discussion </span><span class="qs">heated up.&nbsp;&raquo;</span></span></p></blockquote>
+                    <figcaption class="quote-by label">General Manager, <span class="nw">global consumer group, Asia</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 03 THE PRINCIPLES -->
+        <section class="sec wrap">
+            <header class="sec-head reveal">
+                <p class="tag label"><span class="idx" aria-hidden="true">03</span>The&nbsp;Principles</p>
+                <h2 class="sec-title display">How&nbsp;I&nbsp;<span class="nw">Work<span class="dot">.</span></span></h2>
+            </header>
+            <div class="principles">
+                <div class="principle reveal">
+                    <h3 class="principle-name display">Direct by&nbsp;<span class="nw">design<span class="dot">.</span></span></h3>
+                    <p class="principle-line">I&nbsp;name what&nbsp;doesn&rsquo;t hold, so&nbsp;it&nbsp;breaks here, not&nbsp;on&nbsp;the&nbsp;day.</p>
+                </div>
+                <div class="principle reveal">
+                    <h3 class="principle-name display">Situation-first, not&nbsp;<span class="nw">method-first<span class="dot">.</span></span></h3>
+                    <p class="principle-line">Your&nbsp;situation sets the&nbsp;work. The&nbsp;method follows.</p>
+                </div>
+                <div class="principle reveal">
+                    <h3 class="principle-name display">Obsession with&nbsp;the&nbsp;first 90&nbsp;<span class="nw">seconds<span class="dot">.</span></span></h3>
+                    <p class="principle-line">The&nbsp;opening shapes how&nbsp;the&nbsp;rest is&nbsp;heard.</p>
+                </div>
+                <div class="principle reveal">
+                    <h3 class="principle-name display">Invisible by&nbsp;<span class="nw">intent<span class="dot">.</span></span></h3>
+                    <p class="principle-line">Your&nbsp;audience hears you, in&nbsp;your&nbsp;words.</p>
                 </div>
             </div>
         </section>
 
-        <div class="spacer-sm"></div>
-
-        <!-- ━━━ TESTIMONIAL ━━━ -->
-        <section class="reveal" style="text-align:center;padding:1rem 0;">
-            <div class="section-tag" style="margin-bottom:2rem;">Testimonial</div>
-            <p style="font-family:var(--sans);font-weight:900;font-size:clamp(1.6rem,2.8vw,2.4rem);line-height:1.2;letter-spacing:-0.025em;text-transform:uppercase;color:var(--text-light);max-width:880px;margin:0 auto 1.5rem;">&laquo;&nbsp;Substance, form, confidence<span class="dot">.</span><br>Sofian brought clarity to the frame and discipline to the words<span class="dot">.</span><br><br>The markets responded on a different level entirely<span class="dot">.</span>&nbsp;&raquo;</p>
-            <div style="width:60px;height:1px;background:var(--gold);opacity:0.85;margin:1.5rem auto;"></div>
-            <p style="font-size:0.92rem;letter-spacing:0.02em;color:var(--text-muted-light);max-width:600px;margin:0 auto;line-height:1.85;">Global President, Asian luxury beauty brands</p>
+        <!-- 04 THE SIGNATURE TEST -->
+        <section class="sec wrap rules-B">
+            <header class="sec-head reveal">
+                <p class="tag label"><span class="idx" aria-hidden="true">04</span>The&nbsp;Signature Test</p>
+                <h2 class="sec-title display">6&nbsp;<span class="nw">rules<span class="dot">.</span></span> <span class="nw">Line by&nbsp;line<span class="dot">.</span></span></h2>
+            </header>
+            <p class="rb-verdict reveal"><span class="rb-vl">The&nbsp;line a&nbsp;skeptic <span class="nw">uses against&nbsp;you</span></span> <span class="rb-vl">is&nbsp;often <span class="nw">one&nbsp;you <span class="nw">wrote<span class="dot">.</span></span></span></span></p>
+            <ol class="rb-list reveal">
+                <li class="rb-rule">
+                    <span class="rb-num" aria-hidden="true">01</span>
+                    <h3 class="rb-name">Say only <span class="nw">what&nbsp;you can&nbsp;defend<span class="dot">.</span></span></h3>
+                    <p class="rb-line"><span class="ph">Narrow the&nbsp;claim</span> <span class="ph">until you can defend every&nbsp;word.</span></p>
+                </li>
+                <li class="rb-rule">
+                    <span class="rb-num" aria-hidden="true">02</span>
+                    <h3 class="rb-name">Say what&nbsp;you&nbsp;<span class="nw">are<span class="dot">.</span></span></h3>
+                    <p class="rb-line"><span class="ph">Defined against a&nbsp;rival or&nbsp;a&nbsp;cliché,</span> <span class="ph">you play&nbsp;second.</span></p>
+                    <dl class="rb-ex">
+                        <dt>Said</dt>
+                        <dd>&laquo;&nbsp;This is&nbsp;not&nbsp;a&nbsp;<span class="nw">cost-cutting plan.&nbsp;&raquo;</span></dd>
+                        <dt>What they remember</dt>
+                        <dd>&laquo;&nbsp;<span class="rb-key">cost-cutting</span>&nbsp;&raquo;.</dd>
+                    </dl>
+                </li>
+                <li class="rb-rule">
+                    <span class="rb-num" aria-hidden="true">03</span>
+                    <h3 class="rb-name">Let the&nbsp;audience <span class="nw">save&nbsp;face<span class="dot">.</span></span></h3>
+                    <p class="rb-line"><span class="ph">Show what&nbsp;changed,</span> <span class="ph">so&nbsp;the&nbsp;past is&nbsp;nobody&rsquo;s&nbsp;fault.</span></p>
+                    <dl class="rb-ex">
+                        <dt>Said</dt>
+                        <dd>&laquo;&nbsp;This market is&nbsp;untapped.&nbsp;&raquo;</dd>
+                        <dt>What its head hears</dt>
+                        <dd>&laquo;&nbsp;You <span class="rb-key">missed</span>&nbsp;it.&nbsp;&raquo;</dd>
+                    </dl>
+                </li>
+                <li class="rb-rule">
+                    <span class="rb-num" aria-hidden="true">04</span>
+                    <h3 class="rb-name">Context is&nbsp;not <span class="nw">a&nbsp;message<span class="dot">.</span></span></h3>
+                    <p class="rb-line"><span class="ph">Keep what&nbsp;serves the&nbsp;argument.</span> <span class="ph">The&nbsp;rest goes in&nbsp;the&nbsp;appendix.</span></p>
+                </li>
+                <li class="rb-rule">
+                    <span class="rb-num" aria-hidden="true">05</span>
+                    <h3 class="rb-name">Build toward <span class="nw">their&nbsp;number<span class="dot">.</span></span></h3>
+                    <p class="rb-line"><span class="ph">Make the&nbsp;case,</span> <span class="ph">then&nbsp;tie it&nbsp;to&nbsp;the&nbsp;figure <span class="nw">they answer&nbsp;for.</span></span></p>
+                </li>
+                <li class="rb-rule">
+                    <span class="rb-num" aria-hidden="true">06</span>
+                    <h3 class="rb-name">Proof before <span class="nw">status<span class="dot">.</span></span></h3>
+                    <p class="rb-line"><span class="ph">Show what&nbsp;you&rsquo;ve done</span> <span class="ph">before stating who&nbsp;you&nbsp;are.</span></p>
+                </li>
+            </ol>
         </section>
 
-        <div class="spacer-sm"></div>
-
-        <!-- ━━━ PROCESS ━━━ -->
-        <section>
-            <div class="section-header reveal">
-                <div class="section-tag">The Protocol</div>
-                <h2 class="section-title">Five phases<span class="dot">.</span><br>End to end<span class="dot">.</span></h2>
-            </div>
-            <div class="grid-2 reveal">
-                <div class="card-dark">
-                    <div class="process-num">Phase N&deg;01</div>
-                    <div class="process-name">Strategic Reframing<span class="dot">.</span></div>
-                    <p class="process-desc">Map the audience. Who supports. Who detracts. Find the angle that repositions the pitch before a single slide is touched.</p>
-                </div>
-                <div class="card">
-                    <div class="process-num">Phase N&deg;02</div>
-                    <div class="process-name">Narrative Architecture<span class="dot">.</span></div>
-                    <p class="process-desc">Build the skeleton. The opening that earns attention. The single idea they must leave with. The close that locks the verdict.</p>
-                </div>
-                <div class="card">
-                    <div class="process-num">Phase N&deg;03</div>
-                    <div class="process-name">Argument Sequencing<span class="dot">.</span></div>
-                    <p class="process-desc">Order the proofs. Control when they agree, when they question, when they concede. Sequence is leverage.</p>
-                </div>
-                <div class="card-dark">
-                    <div class="process-num">Phase N&deg;04</div>
-                    <div class="process-name">Adversarial Pressure<span class="dot">.</span></div>
-                    <p class="process-desc">Attack the argument before the audience does. Surface every weakness, every contradiction, every ambiguity.</p>
-                </div>
-                <div class="card-dark">
-                    <div class="process-num">Phase N&deg;05</div>
-                    <div class="process-name">Full Simulation<span class="dot">.</span></div>
-                    <p class="process-desc">Rehearsal under real conditions. Voice, pace, body, pause management.</p>
-                </div>
-                <div class="card-gold">
-                    <div class="process-num">The result</div>
-                    <div class="process-name">You walk in sharp<span class="dot">.</span></div>
-                    <p class="process-desc">Every word precise. Every minute dense. A message built to hit under any pressure.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="spacer"></div>
-
-        <!-- ━━━ OUTCOMES ━━━ -->
-        <section>
-            <div class="section-header reveal">
-                <div class="section-tag">The Outcomes</div>
-                <h2 class="section-title">What<br>followed<span class="dot">.</span></h2>
-            </div>
-            <div class="grid-3 reveal">
-                <div class="card">
-                    <div class="process-num">Outcome</div>
-                    <div class="process-name">$5B cession defended.<br>Mandate carried<span class="dot">.</span></div>
-                    <p class="process-desc">Business Unit Director defending portfolio strategy during a $5B cession.</p>
-                </div>
-                <div class="card-dark">
-                    <div class="process-num">Outcome</div>
-                    <div class="process-name">Annual review.<br>Audience held<span class="dot">.</span></div>
-                    <p class="process-desc">Global Brand GM defending strategy in front of Group leadership. Mandate approved before Q&amp;A.</p>
-                </div>
-                <div class="card">
-                    <div class="process-num">Outcome</div>
-                    <div class="process-name">First address.<br>Authority established<span class="dot">.</span></div>
-                    <p class="process-desc">A newly appointed executive's first address to the organization. Tone established. No challenge to direction.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="spacer"></div>
-
-        <!-- ━━━ HOW I WORK ━━━ -->
-        <section>
-            <div class="section-header reveal">
-                <div class="section-tag">Working Style</div>
-                <h2 class="section-title">How I Work<span class="dot">.</span></h2>
-            </div>
-
-            <div class="coaching-grid reveal">
-                <div class="coaching-card">
-                    <div class="coaching-num">Principle 01</div>
-                    <div>
-                        <div class="coaching-title">Direct by design<span class="dot">.</span></div>
-                        <p class="coaching-text">I don't build slides. I build the argument. The deck follows. Every assumption, every line, every angle that doesn't hold. The structure collapses here, not on the day.</p>
-                    </div>
-                </div>
-                <div class="coaching-card dark">
-                    <div class="coaching-num">Principle 02</div>
-                    <div>
-                        <div class="coaching-title">Situation-first, not method-first<span class="dot">.</span></div>
-                        <p class="coaching-text">Every preparation starts from your specific situation. The method follows, never the reverse.</p>
-                    </div>
-                </div>
-                <div class="coaching-card">
-                    <div class="coaching-num">Principle 03</div>
-                    <div>
-                        <div class="coaching-title">Obsession with the first 90 seconds<span class="dot">.</span></div>
-                        <p class="coaching-text">The decision is made in the opening. Lose them in the first 90 seconds, and no argument recovers it.</p>
-                    </div>
-                </div>
-                <div class="coaching-card dark">
-                    <div class="coaching-num">Principle 04</div>
-                    <div>
-                        <div class="coaching-title">Invisible by intent<span class="dot">.</span></div>
-                        <p class="coaching-text">No methodology to credit. No brand to mention. The only people who know I exist are the ones you would refer me to.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="spacer"></div>
-
-        <!-- ━━━ WHO ━━━ -->
-        <section>
-            <div class="section-header reveal">
-                <div class="section-tag">The Partner</div>
-                <h2 class="section-title">Sofian<br>Meguellati<span class="dot">.</span></h2>
-            </div>
-            <div class="about-card reveal">
+        <!-- 05 THE PARTNER -->
+        <section class="sec wrap">
+            <header class="sec-head is-partner reveal">
+                <p class="tag label"><span class="idx" aria-hidden="true">05</span>The&nbsp;Partner</p>
+                <h2 class="sec-title display">Sofian<br><span class="nw">Meguellati<span class="dot">.</span></span></h2>
+            </header>
+            <div class="about cream reveal">
                 <div class="about-left">
-                    <img src="sofian-2026.png" alt="Sofian Meguellati" class="about-photo">
-                    <div style="margin-top:2.5rem;">
-                        <div class="about-name">10 Years<span class="dot">.</span><br>100+ Engagements<span class="dot">.</span></div>
-                    </div>
+                    <img src="sofian-2026.png" alt="Sofian Meguellati" class="about-photo" width="1254" height="1254">
                 </div>
                 <div class="about-right">
-                    <p class="card-text">For 10+ years, I've prepared GMs and Brand Presidents at the world's leading luxury beauty, hospitality, consumer goods, and entertainment groups. On the pitches that decide mandates, budgets, and roles.</p>
-                    <p class="card-text" style="margin-top:1rem;">What I bring is the pattern recognition from 100+ engagements that delivered the outcome. I know what works, what doesn't, and what flips the verdict.</p>
-                    <div style="margin-top:2rem;border-top:1px solid var(--border-dark);padding-top:1.5rem;">
-                        <div class="about-stat" style="margin-bottom:0.6rem;color:var(--gold-deep);">Asia Partner</div>
-                        <p class="card-text">Asia-based since 2018. Mandates run across Tokyo, Seoul, Shanghai, Hong Kong, Singapore.</p>
+                    <div>
+                        <p class="about-stat display">10&nbsp;Years<span class="dot">.</span><br>100+ Presentations<span class="dot">.</span></p>
+                        <p class="about-text">I&rsquo;ve advised executives at&nbsp;global luxury beauty, hospitality, consumer goods, food, and&nbsp;entertainment groups. On&nbsp;the&nbsp;pitches that&nbsp;decide mandates, budgets, and&nbsp;roles.</p>
+                        <p class="about-text">My&nbsp;expertise is&nbsp;order. I&nbsp;turn dense, expert thinking into one&nbsp;argument that holds: the&nbsp;angle, the&nbsp;sequence, and&nbsp;every word a&nbsp;room of&nbsp;peers will read as&nbsp;a&nbsp;position.</p>
+                    </div>
+                    <div class="about-base">
+                        <p class="label">Based in&nbsp;Tokyo</p>
+                        <p class="about-text">In&nbsp;Asia since 2018. Sessions in&nbsp;person or&nbsp;by&nbsp;video, in&nbsp;English or&nbsp;French.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="spacer"></div>
-
-        <!-- ━━━ CONTACT ━━━ -->
-        <section id="contact">
-            <div class="contact-card reveal">
-                <div class="contact-title">When the moment<br>decides the mandate<span class="dot">.</span></div>
-                <p class="contact-text">First address. Annual review. Convention. If the angle isn't there yet, send me an email.</p>
-                <a href="mailto:sofian@hack40.com" class="contact-email">sofian@hack40.com</a>
-                <p class="contact-note">Engagements held in strict confidence</p>
+        <!-- CONTACT -->
+        <section id="contact" class="sec wrap">
+            <div class="contact cream reveal">
+                <h2 class="contact-title display">When the&nbsp;moment <br>shapes <span class="nw">the&nbsp;<span class="nw">mandate<span class="dot">.</span></span></span></h2>
+                <p class="contact-text">Write even if&nbsp;the&nbsp;angle isn&rsquo;t there yet. Send the&nbsp;date, the&nbsp;audience, and&nbsp;where&nbsp;the&nbsp;draft stands.</p>
+                <a href="mailto:sofian@hack40.com" class="btn">sofian@hack40.com</a>
             </div>
         </section>
 
-        <!-- FOOTER -->
+    </main>
+
+    <div class="wrap">
         <footer class="footer">
-            <div class="footer-brand">Carte Blanche<span class="dot">.</span> &middot; Paris &middot; Singapore &middot; Shanghai &middot; Hong Kong &middot; Seoul &middot; Tokyo</div>
-            <div class="footer-copy">&copy; 2026</div>
+            <p class="label">Carte Blanche<span class="dot">.</span>&nbsp;&middot; Tokyo&nbsp;&middot; Seoul&nbsp;&middot; Shanghai&nbsp;&middot; Hong&nbsp;Kong&nbsp;&middot; Singapore&nbsp;&middot; Paris</p>
+            <p class="label">&copy; 2026&nbsp;Carte Blanche SAS</p>
         </footer>
     </div>
 
     <script>
         const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.08 });
-        reveals.forEach(el => observer.observe(el));
+        if (!('IntersectionObserver' in window)) {
+            reveals.forEach(el => el.classList.add('visible'));
+        } else {
+            const observer = new IntersectionObserver((entries) => {
+                entries
+                    .filter(e => e.isIntersecting)
+                    .sort((a, b) => (a.boundingClientRect.top - b.boundingClientRect.top) || (a.boundingClientRect.left - b.boundingClientRect.left))
+                    .forEach((entry, i) => {
+                        entry.target.style.setProperty('--d', Math.min(i, 5) * 0.09 + 's');
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    });
+            }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+            reveals.forEach(el => observer.observe(el));
+        }
     </script>
 
 </body>
